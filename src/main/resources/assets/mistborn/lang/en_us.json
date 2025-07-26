@@ -1,0 +1,14 @@
+{
+  "item.mistborn.tin_ingot": "Tin Ingot",
+  "item.mistborn.raw_tin": "Raw Tin",
+
+  "item.mistborn.chisel": "Chisel",
+
+  "block.mistborn.tin_ore": "Tin Ore",
+  "block.mistborn.silver_ore": "Silver Ore",
+  "block.mistborn.deepslate_tin_ore": "Deepslate Tin Ore",
+  "block.mistborn.tin_block": "Block of Tin",
+
+  "creativetab.mistborn.mistborn_items": "Mistborn Items",
+  "creativetab.mistborn.tutorial_items": "Tutorial Items"
+}

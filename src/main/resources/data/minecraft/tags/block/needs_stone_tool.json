@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "mistborn:tin_ore",
+    "mistborn:deepslate_tin_ore",
+    "mistborn:tin_block"
+
+  ]
+}

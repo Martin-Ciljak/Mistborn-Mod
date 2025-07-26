@@ -1,5 +1,9 @@
 package net.chilly.mistbornmod;
 
+import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.item.ModCreativeModeTabs;
+import net.chilly.mistbornmod.item.ModItems;
+import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
 import com.mojang.logging.LogUtils;
@@ -21,7 +25,7 @@ import net.neoforged.neoforge.event.server.ServerStartingEvent;
 @Mod(MistbornMod.MOD_ID)
 public class MistbornMod {
     // Define mod id in a common place for everything to reference
-    public static final String MOD_ID = "chilly_mistborn_mod";
+    public static final String MOD_ID = "mistborn";
     // Directly reference a slf4j logger
     public static final Logger LOGGER = LogUtils.getLogger();
 
@@ -36,6 +40,14 @@ public class MistbornMod {
         // Do not add this line if there are no @SubscribeEvent-annotated functions in this class, like onServerStarting() below.
         NeoForge.EVENT_BUS.register(this);
 
+
+        ModCreativeModeTabs.register(modEventBus);
+
+        // register blocks and items
+        ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
+
+
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -48,7 +60,21 @@ public class MistbornMod {
 
     // Add the example block item to the building blocks tab
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.TIN_INGOT);
+            event.accept(ModItems.RAW_TIN);
+        }
+        if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
+            event.accept(ModBlocks.TIN_ORE);
+            event.accept(ModBlocks.SILVER_ORE);
+            event.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+        }
+        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
+            event.accept(ModBlocks.TIN_BLOCK);
+        }
+        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
+            event.accept(ModItems.CHISEL);
+        }
     }
 
     // You can use SubscribeEvent and let the Event Bus discover methods to call

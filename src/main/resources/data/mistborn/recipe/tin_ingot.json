@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "catagory": "misc",
+  "ingredients": [
+    {
+      "item": "mistborn:tin_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "mistborn:tin_ingot"
+  }
+}
