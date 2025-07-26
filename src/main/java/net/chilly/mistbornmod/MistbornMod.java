@@ -63,6 +63,7 @@ public class MistbornMod {
         if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
             event.accept(ModItems.TIN_INGOT);
             event.accept(ModItems.RAW_TIN);
+            event.accept(ModItems.WINE_BOTTLE);
         }
         if (event.getTabKey() == CreativeModeTabs.NATURAL_BLOCKS) {
             event.accept(ModBlocks.TIN_ORE);
@@ -72,8 +73,10 @@ public class MistbornMod {
         if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
             event.accept(ModBlocks.TIN_BLOCK);
         }
-        if (event.getTabKey() == CreativeModeTabs.TOOLS_AND_UTILITIES) {
-            event.accept(ModItems.CHISEL);
+        if (event.getTabKey() == CreativeModeTabs.FOOD_AND_DRINKS) {
+            event.accept(ModItems.BAYWRAP);
+            event.accept(ModItems.VENTURE_WINE);
+            ;
         }
     }
 

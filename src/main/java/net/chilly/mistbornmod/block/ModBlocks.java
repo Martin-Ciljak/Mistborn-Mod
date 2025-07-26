@@ -1,6 +1,7 @@
 package net.chilly.mistbornmod.block;
 
 import net.chilly.mistbornmod.MistbornMod;
+import net.chilly.mistbornmod.block.custom.MagicBlock;
 import net.chilly.mistbornmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.item.BlockItem;
@@ -42,13 +43,17 @@ public class ModBlocks {
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.DEEPSLATE)));
 
-
-
     public static final DeferredBlock<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.of()
                     .strength(4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.METAL)));
+
+
+    public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
+            () -> new MagicBlock(BlockBehaviour.Properties.of()
+                    .strength(2f)
+                    .requiresCorrectToolForDrops()));
 
     private static <T extends  Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

@@ -1,14 +1,32 @@
 {
+  "item.mistborn.steel_ingot": "Steel Ingot",
   "item.mistborn.tin_ingot": "Tin Ingot",
+  "item.mistborn.pewter_ingot": "Pewter Ingot",
+  "item.mistborn.zinc_ingot": "Zinc Ingot",
+  "item.mistborn.brass_ingot": "Brass Ingot",
+  "item.mistborn.bronze_ingot": "Bronze Ingot",
+  "item.mistborn.chromium_ingot": "Chromium Ingot",
+  "item.mistborn.nicrosil_ingot": "Nicrosil Ingot",
+  "item.mistborn.aluminum_ingot": "Aluminum Ingot",
+  "item.mistborn.duralumin_ingot": "Duralumin Ingot",
+  "item.mistborn.cadmium_ingot": "Cadmium Ingot",
+  "item.mistborn.bendalloy_ingot": "Bendalloy Ingot",
+  "item.mistborn.electrum_ingot": "Electrum Ingot",
+  "item.mistborn.silver_ingot": "Silver Ingot",
   "item.mistborn.raw_tin": "Raw Tin",
-
-  "item.mistborn.chisel": "Chisel",
-
+  "item.mistborn.baywrap": "Baywrap",
+  "item.mistborn.venture_wine": "House Venture Quality Wine",
+  "item.mistborn.wine_bottle": "Empty Wine Bottle",
   "block.mistborn.tin_ore": "Tin Ore",
   "block.mistborn.silver_ore": "Silver Ore",
   "block.mistborn.deepslate_tin_ore": "Deepslate Tin Ore",
   "block.mistborn.tin_block": "Block of Tin",
-
   "creativetab.mistborn.mistborn_items": "Mistborn Items",
-  "creativetab.mistborn.tutorial_items": "Tutorial Items"
+  "creativetab.mistborn.tutorial_items": "Tutorial Items",
+  "item.mistborn.chisel": "Chisel",
+  "item.mistborn.magic_block": "Magic Block",
+  "tooltip.mistborn.magic_block.tooltip": "This block is very very §9mMAGICAL§r",
+  "tooltip.mistborn.venture_wine.shift_down": "Very expensive wine straight from §6Straff Venture's§r personal collection. Some say that it §cburns§r really well...",
+  "tooltip.mistborn.venture_wine": "Press §eShift§r if you want more information about this wine",
+  "tooltip.mistborn.baywrap.tooltip": "Favourite snack of Kelsier's thieving crew"
 }
