@@ -69,6 +69,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STEEL_DOOR);
                         output.accept(ModBlocks.STEEL_TRAPDOOR);
 
+                        output.accept(ModItems.GLASS_DAGGER);
+                        output.accept(ModItems.INQUISITOR_AXE);
+
                         output.accept(ModBlocks.STEEL_LAMP);
                         output.accept(ModItems.BAYWRAP);
                         output.accept(ModItems.VENTURE_WINE);

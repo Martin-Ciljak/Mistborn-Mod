@@ -2,6 +2,7 @@ package net.chilly.mistbornmod.datagen;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
@@ -36,6 +37,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.STEEL_FENCE_GATE.get());
         tag(BlockTags.WALLS)
                 .add(ModBlocks.STEEL_WALL.get());
-
+        tag(ModTags.Blocks.NEEDS_OBSIDIAN_TOOL)
+                .addTag(BlockTags.NEEDS_STONE_TOOL);
+        tag(ModTags.Blocks.INCORRECT_FOR_OBSIDIAN_TOOL)
+                .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
+                .remove(ModTags.Blocks.NEEDS_OBSIDIAN_TOOL);
     }
 }

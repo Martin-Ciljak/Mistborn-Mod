@@ -6,6 +6,7 @@ import net.chilly.mistbornmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -37,6 +38,10 @@ public class ModItemTagProvider extends ItemTagsProvider {
                 .add(ModItems.BENDALLOY_INGOT.get())
                 .add(Items.GOLD_INGOT)
                 .add(ModItems.ELECTRUM_INGOT.get());
+        tag(ItemTags.SWORDS)
+                .add(ModItems.GLASS_DAGGER.get());
+        tag(ItemTags.AXES)
+                .add(ModItems.INQUISITOR_AXE.get());
 
     }
 }

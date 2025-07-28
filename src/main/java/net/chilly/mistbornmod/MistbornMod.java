@@ -1,6 +1,7 @@
 package net.chilly.mistbornmod;
 
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.component.ModDataComponents;
 import net.chilly.mistbornmod.item.ModCreativeModeTabs;
 import net.chilly.mistbornmod.item.ModItems;
 import net.minecraft.world.item.CreativeModeTabs;
@@ -42,11 +43,9 @@ public class MistbornMod {
 
 
         ModCreativeModeTabs.register(modEventBus);
-
-        // register blocks and items
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
-
+        ModDataComponents.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

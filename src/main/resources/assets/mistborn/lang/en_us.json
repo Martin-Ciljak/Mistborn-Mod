@@ -42,5 +42,7 @@
   "tooltip.mistborn.magic_block.tooltip": "This block is very very §9mMAGICAL§r",
   "tooltip.mistborn.venture_wine.shift_down": "Very expensive wine straight from §6Straff Venture's§r personal collection. Some say that it §cburns§r really well...",
   "tooltip.mistborn.venture_wine": "Press §eShift§r if you want more information about this wine",
-  "tooltip.mistborn.baywrap.tooltip": "Favourite snack of Kelsier's thieving crew"
+  "tooltip.mistborn.baywrap.tooltip": "Favourite snack of Kelsier's thieving crew",
+  "tooltip.mistborn.chisel.shift_down": "Press shift for more INFO",
+  "tooltip.mistborn.chisel": "More Info"
 }

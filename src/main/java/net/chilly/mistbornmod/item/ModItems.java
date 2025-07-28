@@ -4,9 +4,7 @@ import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.item.custom.ChiselItem;
 import net.chilly.mistbornmod.item.custom.VentureWineItem;
 import net.minecraft.network.chat.Component;
-import net.minecraft.world.item.Item;
-import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -79,6 +77,14 @@ public class ModItems {
                     super.appendHoverText(stack, context, tooltipComponents, tooltipFlag);
                 }
             });
+
+//  Tools
+    public static final DeferredItem<SwordItem> GLASS_DAGGER = ITEMS.register("glass_dagger",
+        () -> new SwordItem(ModToolTiers.OBSIDIAN, new Item.Properties()
+                .attributes(SwordItem.createAttributes(ModToolTiers.OBSIDIAN, 3, 8f))));
+    public static final DeferredItem<AxeItem> INQUISITOR_AXE = ITEMS.register("inquisitor_axe",
+        () -> new AxeItem(ModToolTiers.OBSIDIAN, new Item.Properties()
+                .attributes(AxeItem.createAttributes(ModToolTiers.OBSIDIAN, 6, -2.4f))));
 
 
     public static final DeferredItem<Item> CHISEL = ITEMS.register("chisel",
