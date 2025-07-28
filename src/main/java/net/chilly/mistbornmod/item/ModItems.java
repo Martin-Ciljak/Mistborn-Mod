@@ -55,6 +55,16 @@ public class ModItems {
 
     public static final DeferredItem<Item> RAW_TIN = ITEMS.register("raw_tin",
             () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_ZINC = ITEMS.register("raw_zinc",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_CHROMIUM = ITEMS.register("raw_chromium",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_ALUMINUM = ITEMS.register("raw_aluminum",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_CADMIUM = ITEMS.register("raw_cadmium",
+            () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_SILVER = ITEMS.register("raw_silver",
+            () -> new Item(new Item.Properties()));
 
 //    Foods
     public static final DeferredItem<Item> WINE_BOTTLE = ITEMS.register("wine_bottle",

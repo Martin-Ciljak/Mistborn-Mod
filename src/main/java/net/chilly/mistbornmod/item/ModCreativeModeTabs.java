@@ -41,13 +41,38 @@ public class ModCreativeModeTabs {
                         output.accept(Items.GOLD_INGOT);
                         output.accept(ModItems.ELECTRUM_INGOT);
                         output.accept(ModItems.SILVER_INGOT);
+
+                        output.accept(Items.RAW_IRON);
                         output.accept(ModItems.RAW_TIN);
+                        output.accept(ModItems.RAW_ZINC);
+                        output.accept(Items.RAW_COPPER);
+                        output.accept(ModItems.RAW_CHROMIUM);
+                        output.accept(ModItems.RAW_ALUMINUM);
+                        output.accept(ModItems.RAW_CADMIUM);
+                        output.accept(Items.RAW_GOLD);
+                        output.accept(ModItems.RAW_SILVER);
+
+                        output.accept(ModBlocks.STEEL_BLOCK);
                         output.accept(ModBlocks.TIN_BLOCK);
+
                         output.accept(ModBlocks.TIN_ORE);
                         output.accept(ModBlocks.SILVER_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+
+                        output.accept(ModBlocks.STEEL_STAIRS);
+                        output.accept(ModBlocks.STEEL_SLAB);
+                        output.accept(ModBlocks.STEEL_PRESSURE_PLATE);
+                        output.accept(ModBlocks.STEEL_BUTTON);
+                        output.accept(ModBlocks.STEEL_FENCE);
+                        output.accept(ModBlocks.STEEL_FENCE_GATE);
+                        output.accept(ModBlocks.STEEL_WALL);
+                        output.accept(ModBlocks.STEEL_DOOR);
+                        output.accept(ModBlocks.STEEL_TRAPDOOR);
+
+                        output.accept(ModBlocks.STEEL_LAMP);
                         output.accept(ModItems.BAYWRAP);
                         output.accept(ModItems.VENTURE_WINE);
+
                         output.accept(ModItems.WINE_BOTTLE);
                     }).build());
 
