@@ -109,6 +109,9 @@ public class ModItems {
                     .attributes(TutorialHammerItem.createAttributes(Tiers.IRON, 6, -3f))));
     public static final DeferredItem<Item> CHISEL = ITEMS.register("chisel",
             () -> new ChiselItem(new Item.Properties().durability(32)));
+    public static final DeferredItem<Item> TUTORIAL_BOW = ITEMS.register("tutorial_bow",
+            () -> new BowItem(new Item.Properties().durability(500)));
+
 
     public static void register(IEventBus eventBus) {
         ITEMS.register(eventBus);

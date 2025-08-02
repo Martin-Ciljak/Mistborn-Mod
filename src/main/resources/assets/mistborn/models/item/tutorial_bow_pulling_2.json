@@ -1,0 +1,6 @@
+{
+    "parent": "mistborn:item/tutorial_bow",
+    "textures": {
+        "layer0": "mistborn:item/tutorial_bow_pulling_2"
+    }
+}

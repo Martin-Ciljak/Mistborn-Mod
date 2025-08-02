@@ -91,6 +91,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.CHISEL);
                         output.accept(ModBlocks.MAGIC_BLOCK);
                         output.accept(ModItems.IRON_HAMMER);
+                        output.accept(ModItems.TUTORIAL_BOW);
                     }).build());
 
 
