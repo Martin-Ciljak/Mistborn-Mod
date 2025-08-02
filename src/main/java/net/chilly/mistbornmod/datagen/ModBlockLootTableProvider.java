@@ -47,6 +47,8 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 block -> createMultipleDrops(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
         add(ModBlocks.SILVER_ORE.get(),
                 block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.ZINC_ORE.get(),
+                block -> createOreDrop(ModBlocks.ZINC_ORE.get(), ModItems.RAW_ZINC.get()));
     }
 
 

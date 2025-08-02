@@ -72,6 +72,10 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.GLASS_DAGGER);
                         output.accept(ModItems.INQUISITOR_AXE);
 
+                        output.accept(ModItems.ALUMINUM_HELMET);
+                        output.accept(ModItems.MISTCLOAK);
+                        output.accept(ModItems.ALUMINUM_HORSE_ARMOR);
+
                         output.accept(ModBlocks.STEEL_LAMP);
                         output.accept(ModItems.BAYWRAP);
                         output.accept(ModItems.VENTURE_WINE);
@@ -86,6 +90,7 @@ public class ModCreativeModeTabs {
                     .displayItems((itemDisplayParameters, output) -> {
                         output.accept(ModItems.CHISEL);
                         output.accept(ModBlocks.MAGIC_BLOCK);
+                        output.accept(ModItems.IRON_HAMMER);
                     }).build());
 
 

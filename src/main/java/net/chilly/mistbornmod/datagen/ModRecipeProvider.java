@@ -63,7 +63,7 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.NICROSIL_INGOT.get(), 4)
                 .requires(ModItems.CHROMIUM_INGOT, 1)
                 .requires(Items.BARRIER, 3)// replace with Nickel
-                .unlockedBy("has_chromium_ingot", has(ModItems.CHROMIUM_INGOT)).save(recipeOutput, "mistborn_nicrosil_ingot_from_chromium_and_nickel");
+                .unlockedBy("has_chromium_ingot", has(ModItems.CHROMIUM_INGOT)).save(recipeOutput, "mistborn:nicrosil_ingot_from_chromium_and_nickel");
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.DURALUMIN_INGOT.get(), 9)
                 .requires(ModItems.ALUMINUM_INGOT, 8)
                 .requires(Items.COPPER_INGOT)

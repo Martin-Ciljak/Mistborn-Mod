@@ -4,6 +4,7 @@ import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.component.ModDataComponents;
 import net.chilly.mistbornmod.item.ModCreativeModeTabs;
 import net.chilly.mistbornmod.item.ModItems;
+import net.chilly.mistbornmod.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -92,6 +93,8 @@ public class MistbornMod {
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
+            LOGGER.debug("HELLO 1");
+            ModItemProperties.addCustomItemProperties();
 
         }
     }

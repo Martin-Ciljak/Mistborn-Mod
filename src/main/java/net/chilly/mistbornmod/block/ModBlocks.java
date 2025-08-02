@@ -35,6 +35,11 @@ public class ModBlocks {
                         .strength(4f)
                         .requiresCorrectToolForDrops()
                         .sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> ZINC_ORE = registerBlock("zinc_ore",
+            () -> new Block(BlockBehaviour.Properties.of().
+                    strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)));
 
     public static final DeferredBlock<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
             () -> new DropExperienceBlock(
