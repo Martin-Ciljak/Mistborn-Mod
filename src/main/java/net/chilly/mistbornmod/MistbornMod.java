@@ -2,8 +2,10 @@ package net.chilly.mistbornmod;
 
 import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.component.ModDataComponents;
+import net.chilly.mistbornmod.effect.ModEffects;
 import net.chilly.mistbornmod.item.ModCreativeModeTabs;
 import net.chilly.mistbornmod.item.ModItems;
+import net.chilly.mistbornmod.potion.ModPotions;
 import net.chilly.mistbornmod.util.ModItemProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
@@ -47,6 +49,8 @@ public class MistbornMod {
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         ModDataComponents.register(modEventBus);
+        ModEffects.register(modEventBus);
+        ModPotions.register(modEventBus);
 
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);

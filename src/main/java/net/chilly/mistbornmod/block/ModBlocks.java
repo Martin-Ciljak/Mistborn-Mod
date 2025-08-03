@@ -1,6 +1,7 @@
 package net.chilly.mistbornmod.block;
 
 import net.chilly.mistbornmod.MistbornMod;
+import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
 import net.chilly.mistbornmod.block.custom.MagicBlock;
 import net.chilly.mistbornmod.block.custom.SteelLampBlock;
 import net.chilly.mistbornmod.item.ModItems;
@@ -93,7 +94,8 @@ public class ModBlocks {
             () -> new SteelLampBlock(BlockBehaviour.Properties.of().strength(2f)
                     .lightLevel(state -> state.getValue(SteelLampBlock.CLICKED) ? 15 : 0)));
 
-
+    public static final DeferredBlock<Block> BARLEY_CROP = BLOCKS.register("barley_crop",
+            () -> new BarleyCropBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 
 
     private static <T extends  Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {

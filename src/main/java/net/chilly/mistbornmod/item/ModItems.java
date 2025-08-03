@@ -1,6 +1,7 @@
 package net.chilly.mistbornmod.item;
 
 import net.chilly.mistbornmod.MistbornMod;
+import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.item.custom.ChiselItem;
 import net.chilly.mistbornmod.item.custom.ModArmorItem;
 import net.chilly.mistbornmod.item.custom.TutorialHammerItem;
@@ -68,13 +69,20 @@ public class ModItems {
     public static final DeferredItem<Item> RAW_SILVER = ITEMS.register("raw_silver",
             () -> new Item(new Item.Properties()));
 
-//    Foods
+
+    // Must be before foods for some reason
     public static final DeferredItem<Item> WINE_BOTTLE = ITEMS.register("wine_bottle",
             () -> new Item(new Item.Properties()));
+//    Foods
+    public static final DeferredItem<Item> BARLEY = ITEMS.register("barley",
+        () -> new ItemNameBlockItem(ModBlocks.BARLEY_CROP.get(), new Item.Properties().food(ModFoodProperfies.BARLEY)));
+    public static final DeferredItem<Item> COOKED_BARLEY = ITEMS.register("cooked_barley",
+            () -> new Item(new Item.Properties().food(ModFoodProperfies.COOKED_BARLEY)));
     public static final DeferredItem<Item> VENTURE_WINE = ITEMS.register("venture_wine",
             () -> new VentureWineItem(new Item.Properties().food(ModFoodProperfies.VENTURE_WINE)));
     public static final DeferredItem<Item> BAYWRAP = ITEMS.register("baywrap",
-            () -> new Item(new Item.Properties().food(ModFoodProperfies.BAYWRAP)){
+            () -> new Item(new Item.Properties().food(ModFoodProperfies.BAYWRAP))
+            {
                 @Override
                 public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltipComponents, TooltipFlag tooltipFlag) {
                     tooltipComponents.add(Component.translatable("tooltip.mistborn.baywrap.tooltip"));

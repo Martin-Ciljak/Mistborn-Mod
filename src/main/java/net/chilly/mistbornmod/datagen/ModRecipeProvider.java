@@ -77,6 +77,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.SILVER_INGOT)
                 .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(recipeOutput, "mistborn:electrum_ingot_from_gold_and_silver");
 
+        SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 200)
+                .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput);
+        SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 100)
+                .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput, "mistborn:cooked_barley_from_smoking");
+        SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.1f, 600)
+                .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput, "mistborn:cooked_barley_from_campfire_cooking");
+
         oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
         oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
         oreSmelting(recipeOutput, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 0.25f, 200, "zinc");

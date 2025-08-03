@@ -11,4 +11,6 @@ public class ModFoodProperfies {
             .effect(() -> new MobEffectInstance(MobEffects.SATURATION, 40), 0.2f).build();
     public static final FoodProperties VENTURE_WINE = new FoodProperties.Builder().nutrition(2).saturationModifier(0.1f)
             .effect(() -> new MobEffectInstance(MobEffects.CONFUSION, 800), 0.2f).alwaysEdible().usingConvertsTo(ModItems.WINE_BOTTLE).build();
+    public static final FoodProperties BARLEY = new FoodProperties.Builder().nutrition(1).saturationModifier(0.1f).build();
+    public static final FoodProperties COOKED_BARLEY = new FoodProperties.Builder().nutrition(3).saturationModifier(0.3f).build();
 }

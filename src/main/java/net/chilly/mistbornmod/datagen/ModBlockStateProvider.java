@@ -2,14 +2,20 @@ package net.chilly.mistbornmod.datagen;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
 import net.chilly.mistbornmod.block.custom.SteelLampBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Function;
+
 
 public class ModBlockStateProvider extends BlockStateProvider {
 
@@ -47,8 +53,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         customLamp();
         blockWithItem(ModBlocks.MAGIC_BLOCK);
+
+        makeCrop(((CropBlock) ModBlocks.BARLEY_CROP.get()), "barley_crop_stage", "barley_crop_stage");
     }
 
+    public void makeCrop(CropBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> barley_states(state, block, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] barley_states(BlockState state, CropBlock block, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().crop(modelName + state.getValue(((BarleyCropBlock) block).getAgeProperty()),
+                ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "block/" + textureName + state.getValue(((BarleyCropBlock) block).getAgeProperty()))).renderType("cutout"));
+
+        return models;
+    }
     private void customLamp() {
         getVariantBuilder(ModBlocks.STEEL_LAMP.get()).forAllStates(state -> {
             if (state.getValue(SteelLampBlock.CLICKED)) {

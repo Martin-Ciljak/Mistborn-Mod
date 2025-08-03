@@ -73,10 +73,14 @@ public class ModItemModelProvider extends ItemModelProvider {
         wallItem(ModBlocks.STEEL_WALL, ModBlocks.STEEL_BLOCK);
         basicItem(ModBlocks.STEEL_DOOR.asItem());
 
+        basicItem(ModItems.WINE_BOTTLE.get());
+
+        basicItem(ModItems.BARLEY.get());
+        basicItem(ModItems.COOKED_BARLEY.get());
         basicItem(ModItems.BAYWRAP.get());
         basicItem(ModItems.VENTURE_WINE.get());
 
-        basicItem(ModItems.WINE_BOTTLE.get());
+
 
 //        basicItem(ModItems.CHISEL.get());
 
