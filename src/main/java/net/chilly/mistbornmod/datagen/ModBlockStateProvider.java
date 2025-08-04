@@ -3,10 +3,12 @@ package net.chilly.mistbornmod.datagen;
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
+import net.chilly.mistbornmod.block.custom.FruitBushBlock;
 import net.chilly.mistbornmod.block.custom.SteelLampBlock;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
@@ -55,6 +57,21 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.MAGIC_BLOCK);
 
         makeCrop(((CropBlock) ModBlocks.BARLEY_CROP.get()), "barley_crop_stage", "barley_crop_stage");
+        makeBush((SweetBerryBushBlock)ModBlocks.FRUIT_BUSH.get(), "fruit_bush_stage", "fruit_bush_stage");
+    }
+
+    public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {
+        Function<BlockState, ConfiguredModel[]> function = state -> fruit_states(state, modelName, textureName);
+
+        getVariantBuilder(block).forAllStates(function);
+    }
+
+    private ConfiguredModel[] fruit_states(BlockState state, String modelName, String textureName) {
+        ConfiguredModel[] models = new ConfiguredModel[1];
+        models[0] = new ConfiguredModel(models().cross(modelName + state.getValue(FruitBushBlock.AGE),
+                ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "block/" + textureName + state.getValue(FruitBushBlock.AGE))).renderType("cutout"));
+
+        return models;
     }
 
     public void makeCrop(CropBlock block, String modelName, String textureName) {

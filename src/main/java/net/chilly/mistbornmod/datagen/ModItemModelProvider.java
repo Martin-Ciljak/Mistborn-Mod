@@ -75,6 +75,7 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         basicItem(ModItems.WINE_BOTTLE.get());
 
+        basicItem(ModItems.FRUITS.get());
         basicItem(ModItems.BARLEY.get());
         basicItem(ModItems.COOKED_BARLEY.get());
         basicItem(ModItems.BAYWRAP.get());

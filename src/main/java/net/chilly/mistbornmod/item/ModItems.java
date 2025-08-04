@@ -76,6 +76,8 @@ public class ModItems {
 //    Foods
     public static final DeferredItem<Item> BARLEY = ITEMS.register("barley",
         () -> new ItemNameBlockItem(ModBlocks.BARLEY_CROP.get(), new Item.Properties().food(ModFoodProperfies.BARLEY)));
+    public static final DeferredItem<Item> FRUITS = ITEMS.register("fruits",
+            () -> new ItemNameBlockItem(ModBlocks.FRUIT_BUSH.get(), new Item.Properties().food(ModFoodProperfies.FRUITS)));
     public static final DeferredItem<Item> COOKED_BARLEY = ITEMS.register("cooked_barley",
             () -> new Item(new Item.Properties().food(ModFoodProperfies.COOKED_BARLEY)));
     public static final DeferredItem<Item> VENTURE_WINE = ITEMS.register("venture_wine",

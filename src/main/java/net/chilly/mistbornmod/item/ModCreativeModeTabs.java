@@ -78,7 +78,9 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.STEEL_LAMP);
 
+                        output.accept(ModItems.FRUITS);
                         output.accept(ModItems.BARLEY);
+                        output.accept(ModItems.COOKED_BARLEY);
                         output.accept(ModItems.BAYWRAP);
                         output.accept(ModItems.VENTURE_WINE);
 

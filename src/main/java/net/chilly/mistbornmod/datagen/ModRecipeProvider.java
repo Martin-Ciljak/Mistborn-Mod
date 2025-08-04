@@ -77,6 +77,13 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .requires(ModItems.SILVER_INGOT)
                 .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT)).save(recipeOutput, "mistborn:electrum_ingot_from_gold_and_silver");
 
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.FOOD, ModItems.BAYWRAP.get(), 1)
+                .requires(Items.BREAD)
+                .requires(ModItems.COOKED_BARLEY)
+                .requires(Items.CARROT)
+                .unlockedBy("has_cooked_barley", has(ModItems.COOKED_BARLEY.get())).save(recipeOutput);
+
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 200)
                 .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput);
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 100)
