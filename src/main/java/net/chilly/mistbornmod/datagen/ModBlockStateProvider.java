@@ -33,7 +33,15 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         blockWithItem(ModBlocks.TIN_ORE);
         blockWithItem(ModBlocks.SILVER_ORE);
+        blockWithItem(ModBlocks.CHROMIUM_ORE);
+
         blockWithItem(ModBlocks.DEEPSLATE_TIN_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_CHROMIUM_ORE);
+        blockWithItem(ModBlocks.DEEPSLATE_SILVER_ORE);
+
+        blockWithItem(ModBlocks.NETHER_SILVER_ORE);
+
+        blockWithItem(ModBlocks.END_SILVER_ORE);
 
         stairsBlock(ModBlocks.STEEL_STAIRS.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()));
         slabBlock(ModBlocks.STEEL_SLAB.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()), blockTexture(ModBlocks.STEEL_BLOCK.get()));

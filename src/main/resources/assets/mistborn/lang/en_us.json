@@ -37,8 +37,15 @@
   "item.mistborn.aluminum_horse_armor": "Aluminum Horse Armor",
 
   "block.mistborn.tin_ore": "Tin Ore",
+  "block.mistborn.chromium_ore": "Chromium Ore",
   "block.mistborn.silver_ore": "Silver Ore",
+
   "block.mistborn.deepslate_tin_ore": "Deepslate Tin Ore",
+  "block.mistborn.deepslate_chromium_ore": "Deepslate Chromium Ore",
+  "block.mistborn.deepslate_silver_ore": "Deepslate Silver Ore",
+
+  "block.mistborn.nether_silver_ore": "Nether Silver Ore",
+  "block.mistborn.end_silver_ore": "End Silver Ore",
 
   "block.mistborn.tin_block": "Block of Tin",
   "block.mistborn.steel_block": "Block of Steel",

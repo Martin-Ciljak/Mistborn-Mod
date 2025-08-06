@@ -30,18 +30,24 @@ public class ModBlocks {
                         .strength(4f)
                         .requiresCorrectToolForDrops()
                         .sound(SoundType.STONE)));
-    public static final DeferredBlock<Block> SILVER_ORE = registerBlock("silver_ore",
-            () -> new DropExperienceBlock(
-                    UniformInt.of(2, 4),
-                    BlockBehaviour.Properties.of()
-                        .strength(4f)
-                        .requiresCorrectToolForDrops()
-                        .sound(SoundType.STONE)));
     public static final DeferredBlock<Block> ZINC_ORE = registerBlock("zinc_ore",
             () -> new Block(BlockBehaviour.Properties.of().
                     strength(4f)
                     .requiresCorrectToolForDrops()
                     .sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> CHROMIUM_ORE = registerBlock("chromium_ore",
+            () -> new Block(BlockBehaviour.Properties.of().
+                    strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> SILVER_ORE = registerBlock("silver_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.of()
+                            .strength(4f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)));
+
 
     public static final DeferredBlock<Block> DEEPSLATE_TIN_ORE = registerBlock("deepslate_tin_ore",
             () -> new DropExperienceBlock(
@@ -50,6 +56,36 @@ public class ModBlocks {
                             .strength(4f)
                             .requiresCorrectToolForDrops()
                             .sound(SoundType.DEEPSLATE)));
+    public static final DeferredBlock<Block> DEEPSLATE_CHROMIUM_ORE = registerBlock("deepslate_chromium_ore",
+            () -> new Block(BlockBehaviour.Properties.of().
+                    strength(4f)
+                    .requiresCorrectToolForDrops()
+                    .sound(SoundType.STONE)));
+    public static final DeferredBlock<Block> DEEPSLATE_SILVER_ORE = registerBlock("deepslate_silver_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.of()
+                            .strength(4f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> NETHER_SILVER_ORE = registerBlock("nether_silver_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.of()
+                            .strength(4f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)));
+
+    public static final DeferredBlock<Block> END_SILVER_ORE = registerBlock("end_silver_ore",
+            () -> new DropExperienceBlock(
+                    UniformInt.of(2, 4),
+                    BlockBehaviour.Properties.of()
+                            .strength(4f)
+                            .requiresCorrectToolForDrops()
+                            .sound(SoundType.STONE)));
+
+
 
     public static final DeferredBlock<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.of()

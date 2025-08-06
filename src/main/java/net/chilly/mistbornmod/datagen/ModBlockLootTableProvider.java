@@ -49,12 +49,23 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.TIN_ORE.get(),
                 block -> createMultipleDrops(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
-        add(ModBlocks.DEEPSLATE_TIN_ORE.get(),
-                block -> createMultipleDrops(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
+
         add(ModBlocks.SILVER_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.CHROMIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
         add(ModBlocks.ZINC_ORE.get(),
                 block -> createOreDrop(ModBlocks.ZINC_ORE.get(), ModItems.RAW_ZINC.get()));
+        add(ModBlocks.DEEPSLATE_TIN_ORE.get(),
+                block -> createMultipleDrops(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
+        add(ModBlocks.DEEPSLATE_CHROMIUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.DEEPSLATE_SILVER_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.NETHER_SILVER_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.END_SILVER_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
 
         LootItemCondition.Builder lootItemConditionBuilder = LootItemBlockStatePropertyCondition.hasBlockStateProperties(ModBlocks.BARLEY_CROP.get())
                 .setProperties(StatePropertiesPredicate.Builder.properties().hasProperty(BarleyCropBlock.AGE, 3));

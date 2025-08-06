@@ -22,15 +22,25 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(BlockTags.MINEABLE_WITH_PICKAXE)
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.SILVER_ORE.get())
+                .add(ModBlocks.CHROMIUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
+                .add(ModBlocks.DEEPSLATE_CHROMIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SILVER_ORE.get())
+                .add(ModBlocks.NETHER_SILVER_ORE.get())
+                .add(ModBlocks.END_SILVER_ORE.get())
                 .add(ModBlocks.TIN_BLOCK.get());
+
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
                 .add(ModBlocks.TIN_BLOCK.get());
-
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.SILVER_ORE.get());
+                .add(ModBlocks.SILVER_ORE.get())
+                .add(ModBlocks.CHROMIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SILVER_ORE.get())
+                .add(ModBlocks.DEEPSLATE_CHROMIUM_ORE.get())
+                .add(ModBlocks.NETHER_SILVER_ORE.get())
+                .add(ModBlocks.END_SILVER_ORE.get());
         tag(BlockTags.FENCES)
                 .add(ModBlocks.STEEL_FENCE.get());
         tag(BlockTags.FENCE_GATES)

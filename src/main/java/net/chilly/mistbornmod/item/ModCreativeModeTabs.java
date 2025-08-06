@@ -56,8 +56,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.TIN_BLOCK);
 
                         output.accept(ModBlocks.TIN_ORE);
+                        output.accept(ModBlocks.CHROMIUM_ORE);
                         output.accept(ModBlocks.SILVER_ORE);
+
                         output.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_CHROMIUM_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_SILVER_ORE);
+
+                        output.accept(ModBlocks.NETHER_SILVER_ORE);
+                        output.accept(ModBlocks.END_SILVER_ORE);
 
                         output.accept(ModBlocks.STEEL_STAIRS);
                         output.accept(ModBlocks.STEEL_SLAB);
