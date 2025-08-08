@@ -52,5 +52,10 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.INCORRECT_FOR_OBSIDIAN_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_OBSIDIAN_TOOL);
+        this.tag(BlockTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ASPEN_LOG.get())
+                .add(ModBlocks.ASPEN_WOOD.get())
+                .add(ModBlocks.STRIPPED_ASPEN_LOG.get())
+                .add(ModBlocks.STRIPPED_ASPEN_WOOD.get());
     }
 }

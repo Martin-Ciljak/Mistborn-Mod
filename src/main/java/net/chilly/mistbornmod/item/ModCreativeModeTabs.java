@@ -92,6 +92,15 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.VENTURE_WINE);
 
                         output.accept(ModItems.WINE_BOTTLE);
+
+                        output.accept(ModBlocks.ASPEN_LOG);
+                        output.accept(ModBlocks.ASPEN_WOOD);
+                        output.accept(ModBlocks.STRIPPED_ASPEN_LOG);
+                        output.accept(ModBlocks.STRIPPED_ASPEN_WOOD);
+                        output.accept(ModBlocks.ASPEN_PLANS);
+                        output.accept(ModBlocks.ASPEN_SAPLING);
+                        output.accept(ModBlocks.ASPEN_LEAVES);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> TUTORIAL_ITEMS_TAB = CREATIVE_MOD_TAB.register("tutorial_items_tab",

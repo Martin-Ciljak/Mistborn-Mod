@@ -19,6 +19,8 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_NETHER_SILVER_ORE = registerKey("add_nether_silver_ore");
     public static final ResourceKey<BiomeModifier> ADD_END_SILVER_ORE = registerKey("add_end_silver_ore");
 
+    public static final ResourceKey<BiomeModifier> ADD_TREE_ASPEN = registerKey("add_tree_aspen");
+
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
         // CF -> PF -> BM
@@ -40,6 +42,29 @@ public class ModBiomeModifiers {
                 biomes.getOrThrow(BiomeTags.IS_END),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlaceFeatures.END_SILVER_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
+        ));
+
+
+        context.register(ADD_TREE_ASPEN, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(
+                        biomes.getOrThrow(Biomes.PLAINS),
+                        biomes.getOrThrow(Biomes.BIRCH_FOREST),
+                        biomes.getOrThrow(Biomes.DARK_FOREST),
+                        biomes.getOrThrow(Biomes.FLOWER_FOREST),
+                        biomes.getOrThrow(Biomes.FOREST),
+                        biomes.getOrThrow(Biomes.GROVE),
+                        biomes.getOrThrow(Biomes.JUNGLE),
+                        biomes.getOrThrow(Biomes.MEADOW),
+                        biomes.getOrThrow(Biomes.STONY_PEAKS),
+                        biomes.getOrThrow(Biomes.STONY_SHORE),
+                        biomes.getOrThrow(Biomes.SWAMP),
+                        biomes.getOrThrow(Biomes.WINDSWEPT_HILLS),
+                        biomes.getOrThrow(Biomes.SAVANNA),
+                        biomes.getOrThrow(Biomes.WINDSWEPT_SAVANNA),
+                        biomes.getOrThrow(Biomes.WINDSWEPT_FOREST)
+                ),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlaceFeatures.ASPEN_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 
     }

@@ -94,6 +94,16 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                         )
                 )
         );
+
+        this.dropSelf(ModBlocks.ASPEN_LOG.get());
+        this.dropSelf(ModBlocks.ASPEN_WOOD.get());
+        this.dropSelf(ModBlocks.STRIPPED_ASPEN_LOG.get());
+        this.dropSelf(ModBlocks.STRIPPED_ASPEN_WOOD.get());
+        this.dropSelf(ModBlocks.ASPEN_PLANS.get());
+        this.dropSelf(ModBlocks.ASPEN_SAPLING.get());
+
+        this.add(ModBlocks.ASPEN_LEAVES.get(), block ->
+                createLeavesDrops(block, ModBlocks.ASPEN_SAPLING.get(), NORMAL_LEAVES_SAPLING_CHANCES));
     }
 
 

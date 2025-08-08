@@ -59,6 +59,14 @@
   "block.mistborn.steel_trapdoor": "Steel Trapdoor",
   "block.mistborn.steel_lamp": "Steel Lamp",
 
+  "block.mistborn.aspen_log": "Aspen Log",
+  "block.mistborn.aspen_wood": "Aspen Wood",
+  "block.mistborn.stripped_aspen_log": "Stripped Aspen Log",
+  "block.mistborn.stripped_aspen_wood": "Stripped Aspen Wood",
+  "block.mistborn.aspen_planks": "Aspen Planks",
+  "block.mistborn.aspen_sapling": "Aspen Sapling",
+  "block.mistborn.aspen_leaves": "Aspen Leaves",
+
   "block.mistborn.barley_crop": "Barley Crop",
   "block.mistborn.fruit_crop": "Fruit Crop",
 

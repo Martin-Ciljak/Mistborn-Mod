@@ -1,11 +1,13 @@
 package net.chilly.mistbornmod.datagen;
 
 import net.chilly.mistbornmod.MistbornMod;
+import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.item.ModItems;
 import net.chilly.mistbornmod.util.ModTags;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.ItemTagsProvider;
+import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.block.Block;
@@ -46,5 +48,14 @@ public class ModItemTagProvider extends ItemTagsProvider {
 
         this.tag(ItemTags.TRIMMABLE_ARMOR)
                 .add(ModItems.ALUMINUM_HELMET.get());
+
+        this.tag(ItemTags.LOGS_THAT_BURN)
+                .add(ModBlocks.ASPEN_LOG.get().asItem())
+                .add(ModBlocks.ASPEN_WOOD.get().asItem())
+                .add(ModBlocks.STRIPPED_ASPEN_LOG.get().asItem())
+                .add(ModBlocks.STRIPPED_ASPEN_WOOD.get().asItem());
+
+        this.tag(ItemTags.PLANKS)
+                .add(ModBlocks.ASPEN_PLANS.asItem());
     }
 }

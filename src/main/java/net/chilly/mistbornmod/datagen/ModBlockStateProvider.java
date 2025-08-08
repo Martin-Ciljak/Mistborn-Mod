@@ -5,9 +5,12 @@ import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
 import net.chilly.mistbornmod.block.custom.FruitBushBlock;
 import net.chilly.mistbornmod.block.custom.SteelLampBlock;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CropBlock;
+import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.neoforged.neoforge.client.model.generators.BlockStateProvider;
@@ -66,6 +69,34 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
         makeCrop(((CropBlock) ModBlocks.BARLEY_CROP.get()), "barley_crop_stage", "barley_crop_stage");
         makeBush((SweetBerryBushBlock)ModBlocks.FRUIT_BUSH.get(), "fruit_bush_stage", "fruit_bush_stage");
+
+        logBlock((RotatedPillarBlock) ModBlocks.ASPEN_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.ASPEN_WOOD.get(), blockTexture(ModBlocks.ASPEN_LOG.get()), blockTexture(ModBlocks.ASPEN_LOG.get()));
+        logBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ASPEN_LOG.get());
+        axisBlock((RotatedPillarBlock) ModBlocks.STRIPPED_ASPEN_WOOD.get(), blockTexture(ModBlocks.STRIPPED_ASPEN_LOG.get()), blockTexture(ModBlocks.STRIPPED_ASPEN_LOG.get()));
+
+        blockItem(ModBlocks.ASPEN_LOG);
+        blockItem(ModBlocks.ASPEN_WOOD);
+        blockItem(ModBlocks.STRIPPED_ASPEN_LOG);
+        blockItem(ModBlocks.STRIPPED_ASPEN_WOOD);
+
+        blockWithItem(ModBlocks.ASPEN_PLANS);
+
+        leavesBlock(ModBlocks.ASPEN_LEAVES);
+        saplingBlock(ModBlocks.ASPEN_SAPLING);
+
+
+    }
+
+    private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlock(blockRegistryObject.get(),
+                models().cross(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), blockTexture(blockRegistryObject.get())).renderType("cutout"));
+    }
+
+    private void leavesBlock(DeferredBlock<Block> blockRegistryObject) {
+        simpleBlockWithItem(blockRegistryObject.get(),
+                models().singleTexture(BuiltInRegistries.BLOCK.getKey(blockRegistryObject.get()).getPath(), ResourceLocation.parse("minecraft:block/leaves"),
+                        "all", blockTexture(blockRegistryObject.get())).renderType("cutout"));
     }
 
     public void makeBush(SweetBerryBushBlock block, String modelName, String textureName) {

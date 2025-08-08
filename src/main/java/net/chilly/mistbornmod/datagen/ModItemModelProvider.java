@@ -94,8 +94,17 @@ public class ModItemModelProvider extends ItemModelProvider {
 
         trimmedArmorItem(ModItems.ALUMINUM_HELMET);
         trimmedArmorItem(ModItems.MISTCLOAK);
+
+        saplingItem(ModBlocks.ASPEN_SAPLING);
+
+
     }
 
+    private ItemModelBuilder saplingItem(DeferredBlock<Block> item) {
+        return withExistingParent(item.getId().getPath(),
+                ResourceLocation.parse("item/generated")).texture("layer0",
+                ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "block/" + item.getId().getPath()));
+    }
 
     // Shoutout to El_Redstoniano for making this
     private void trimmedArmorItem(DeferredItem<ArmorItem> itemDeferredItem) {
