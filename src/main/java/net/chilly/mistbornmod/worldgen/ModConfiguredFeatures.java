@@ -2,6 +2,7 @@ package net.chilly.mistbornmod.worldgen;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.block.custom.FruitBushBlock;
 import net.chilly.mistbornmod.worldgen.tree.custom.SpiralFoliagePlacer;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstrapContext;
@@ -14,10 +15,12 @@ import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.util.valueproviders.IntProvider;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.SweetBerryBushBlock;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
 import net.minecraft.world.level.levelgen.feature.Feature;
 import net.minecraft.world.level.levelgen.feature.configurations.FeatureConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.OreConfiguration;
+import net.minecraft.world.level.levelgen.feature.configurations.SimpleBlockConfiguration;
 import net.minecraft.world.level.levelgen.feature.configurations.TreeConfiguration;
 import net.minecraft.world.level.levelgen.feature.featuresize.TwoLayersFeatureSize;
 import net.minecraft.world.level.levelgen.feature.foliageplacers.BlobFoliagePlacer;
@@ -38,9 +41,9 @@ public class ModConfiguredFeatures {
     public static final ResourceKey<ConfiguredFeature<?, ?>> OVERWORLD_SILVER_ORE_KEY = registerKey("silver_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> NETHER_SILVER_ORE_KEY = registerKey("nether_silver_ore");
     public static final ResourceKey<ConfiguredFeature<?, ?>> END_SILVER_ORE_KEY = registerKey("end_silver_ore");
-
-
+    // NATURE KEYS
     public static final ResourceKey<ConfiguredFeature<?, ?>> ASPEN_KEY = registerKey("aspen");
+    public static final ResourceKey<ConfiguredFeature<?, ?>> FRUIT_BUSH_KEY = registerKey("fruit_bush");
 
     public static void bootstrap(BootstrapContext<ConfiguredFeature<?, ?>> context) {
         RuleTest stoneReplaceables = new TagMatchTest(BlockTags.STONE_ORE_REPLACEABLES);
@@ -67,6 +70,18 @@ public class ModConfiguredFeatures {
         )
                 .dirt(BlockStateProvider.simple(Blocks.GRAVEL))
                 .ignoreVines().build());
+        register(
+                context,
+                FRUIT_BUSH_KEY,
+                Feature.RANDOM_PATCH,
+                FeatureUtils.simplePatchConfiguration(
+                        Feature.SIMPLE_BLOCK,
+                        new SimpleBlockConfiguration(
+                                BlockStateProvider.simple(ModBlocks.FRUIT_BUSH.get().defaultBlockState().setValue(FruitBushBlock.AGE, 3))
+                        ),
+                        List.of(Blocks.GRASS_BLOCK)
+                )
+        );
     }
 
 

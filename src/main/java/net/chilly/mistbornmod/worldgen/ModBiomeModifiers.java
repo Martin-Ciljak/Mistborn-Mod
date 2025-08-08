@@ -20,6 +20,7 @@ public class ModBiomeModifiers {
     public static final ResourceKey<BiomeModifier> ADD_END_SILVER_ORE = registerKey("add_end_silver_ore");
 
     public static final ResourceKey<BiomeModifier> ADD_TREE_ASPEN = registerKey("add_tree_aspen");
+    public static final ResourceKey<BiomeModifier> ADD_FRUIT_BUSH = registerKey("add_fruit_bush");
 
 
     public static void bootstrap(BootstrapContext<BiomeModifier> context) {
@@ -64,6 +65,11 @@ public class ModBiomeModifiers {
                         biomes.getOrThrow(Biomes.WINDSWEPT_FOREST)
                 ),
                 HolderSet.direct(placedFeatures.getOrThrow(ModPlaceFeatures.ASPEN_PLACED_KEY)),
+                GenerationStep.Decoration.VEGETAL_DECORATION
+        ));
+        context.register(ADD_FRUIT_BUSH, new BiomeModifiers.AddFeaturesBiomeModifier(
+                HolderSet.direct(biomes.getOrThrow(Biomes.FOREST)),
+                HolderSet.direct(placedFeatures.getOrThrow(ModPlaceFeatures.FRUIT_BUSH_PLACED_KEY)),
                 GenerationStep.Decoration.VEGETAL_DECORATION
         ));
 

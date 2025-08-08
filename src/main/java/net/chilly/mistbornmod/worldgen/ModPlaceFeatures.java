@@ -12,10 +12,7 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
-import net.minecraft.world.level.levelgen.placement.HeightRangePlacement;
-import net.minecraft.world.level.levelgen.placement.PlacedFeature;
-import net.minecraft.world.level.levelgen.placement.PlacementModifier;
-import net.minecraft.world.level.levelgen.placement.RarityFilter;
+import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
@@ -25,6 +22,7 @@ public class ModPlaceFeatures {
     public static final ResourceKey<PlacedFeature> END_SILVER_ORE_PLACED_KEY = registerKey("end_silver_ore_placed");
 
     public static final ResourceKey<PlacedFeature> ASPEN_PLACED_KEY = registerKey("aspen_placed_key");
+    public static final ResourceKey<PlacedFeature> FRUIT_BUSH_PLACED_KEY = registerKey("fruit_bush_placed_key");
 
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
@@ -53,8 +51,11 @@ public class ModPlaceFeatures {
                 VegetationPlacements.treePlacement(PlacementUtils.countExtra(1, 0.1f, 2),
 //                VegetationPlacements.treePlacement(RarityFilter.onAverageOnceEvery(100),
                         ModBlocks.ASPEN_SAPLING.get())
-
-                );
+        );
+        register(context, FRUIT_BUSH_PLACED_KEY, configuredFeatures.getOrThrow(
+                ModConfiguredFeatures.FRUIT_BUSH_KEY),
+                List.of(RarityFilter.onAverageOnceEvery(64), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP_WORLD_SURFACE, BiomeFilter.biome())
+        );
 
     }
 
