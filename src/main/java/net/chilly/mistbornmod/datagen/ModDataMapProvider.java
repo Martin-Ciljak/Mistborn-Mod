@@ -20,6 +20,7 @@ public class ModDataMapProvider extends DataMapProvider {
         this.builder(NeoForgeDataMaps.FURNACE_FUELS)
                 .add(ModItems.VENTURE_WINE.getId(), new FurnaceFuel(1200), false);
         this.builder(NeoForgeDataMaps.COMPOSTABLES)
-                .add(ModItems.BARLEY, new Compostable(0.2f), false);
+                .add(ModItems.BARLEY, new Compostable(0.2f), false)
+                .add(ModItems.BAYWRAP, new Compostable(0.8f), false);
     }
 }

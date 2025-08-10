@@ -26,10 +26,11 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
     protected void buildRecipes(RecipeOutput recipeOutput) {
 //      List of smeltable items
         List<ItemLike> TIN_SMELTABLES =  List.of(ModItems.RAW_TIN, ModBlocks.TIN_ORE, ModBlocks.DEEPSLATE_TIN_ORE);
-        List<ItemLike> ZINC_SMELTABLES = List.of(ModItems.RAW_ZINC);
-        List<ItemLike> CHROMIUM_SMELTABLES = List.of(ModItems.RAW_CHROMIUM);
-        List<ItemLike> ALUMINUM_SMELTABLES = List.of(ModItems.RAW_ALUMINUM);
-        List<ItemLike> CADMIUM_SMELTABLES = List.of(ModItems.RAW_CADMIUM);
+        List<ItemLike> ZINC_SMELTABLES = List.of(ModItems.RAW_ZINC, ModBlocks.ZINC_ORE, ModBlocks.DEEPSLATE_ZINC_ORE);
+        List<ItemLike> ALUMINUM_SMELTABLES = List.of(ModItems.RAW_ALUMINUM, ModBlocks.ALUMINUM_ORE, ModBlocks.DEEPSLATE_ALUMINUM_ORE);
+        List<ItemLike> CHROMIUM_SMELTABLES = List.of(ModItems.RAW_CHROMIUM, ModBlocks.CHROMIUM_ORE, ModBlocks.DEEPSLATE_CHROMIUM_ORE);
+        List<ItemLike> CADMIUM_SMELTABLES = List.of(ModItems.RAW_CADMIUM, ModBlocks.CADMIUM_ORE, ModBlocks.DEEPSLATE_CADMIUM_ORE);
+        List<ItemLike> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER, ModBlocks.SILVER_ORE, ModBlocks.DEEPSLATE_SILVER_ORE, ModBlocks.NETHER_SILVER_ORE, ModBlocks.END_SILVER_ORE);
 
         ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get())
                 .pattern("TTT")
@@ -91,16 +92,18 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         SimpleCookingRecipeBuilder.campfireCooking(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.1f, 600)
                 .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput, "mistborn:cooked_barley_from_campfire_cooking");
 
-        oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin");
-        oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin");
-        oreSmelting(recipeOutput, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 0.25f, 200, "zinc");
-        oreBlasting(recipeOutput, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 0.25f, 100, "zinc");
-        oreSmelting(recipeOutput, CHROMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CHROMIUM_INGOT.get(), 0.25f, 200, "chromium");
-        oreBlasting(recipeOutput, CHROMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CHROMIUM_INGOT.get(), 0.25f, 100, "chromium");
-        oreSmelting(recipeOutput, ALUMINUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINUM_INGOT.get(), 0.25f, 200, "aluminum");
-        oreBlasting(recipeOutput, ALUMINUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINUM_INGOT.get(), 0.25f, 100, "aluminum");
-        oreSmelting(recipeOutput, CADMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CADMIUM_INGOT.get(), 0.25f, 200, "cadmium");
-        oreBlasting(recipeOutput, CADMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CADMIUM_INGOT.get(), 0.25f, 100, "cadmium");
+        oreSmelting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 200, "tin_ingot");
+        oreBlasting(recipeOutput, TIN_SMELTABLES, RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 0.25f, 100, "tin_ingot");
+        oreSmelting(recipeOutput, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 0.25f, 200, "zinc_ingot");
+        oreBlasting(recipeOutput, ZINC_SMELTABLES, RecipeCategory.MISC, ModItems.ZINC_INGOT.get(), 0.25f, 100, "zinc_ingot");
+        oreSmelting(recipeOutput, ALUMINUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINUM_INGOT.get(), 0.25f, 200, "aluminum_ingot");
+        oreBlasting(recipeOutput, ALUMINUM_SMELTABLES, RecipeCategory.MISC, ModItems.ALUMINUM_INGOT.get(), 0.25f, 100, "aluminum_ingot");
+        oreSmelting(recipeOutput, CHROMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CHROMIUM_INGOT.get(), 0.25f, 200, "chromium_ingot");
+        oreBlasting(recipeOutput, CHROMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CHROMIUM_INGOT.get(), 0.25f, 100, "chromium_ingot");
+        oreSmelting(recipeOutput, CADMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CADMIUM_INGOT.get(), 0.25f, 200, "cadmium_ingot");
+        oreBlasting(recipeOutput, CADMIUM_SMELTABLES, RecipeCategory.MISC, ModItems.CADMIUM_INGOT.get(), 0.25f, 100, "cadmium_ingot");
+        oreSmelting(recipeOutput, SILVER_SMELTABLES, RecipeCategory.MISC, ModItems.SILVER_INGOT.get(), 0.25f, 200, "silver_ingot");
+        oreBlasting(recipeOutput, SILVER_SMELTABLES, RecipeCategory.MISC, ModItems.SILVER_INGOT.get(), 0.25f, 100, "silver_ingot");
 
         stairBuilder(ModBlocks.STEEL_STAIRS.get(), Ingredient.of(ModItems.STEEL_INGOT.get())).group("steel").unlockedBy("has_steel_ingot", has(ModItems.STEEL_INGOT)).save(recipeOutput);
         slab(recipeOutput, RecipeCategory.BUILDING_BLOCKS, ModBlocks.STEEL_SLAB.get(), ModItems.STEEL_INGOT.get());

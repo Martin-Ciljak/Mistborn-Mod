@@ -10,6 +10,8 @@ import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -55,12 +57,24 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STEEL_BLOCK);
                         output.accept(ModBlocks.TIN_BLOCK);
 
+                        output.accept(Blocks.IRON_ORE);
                         output.accept(ModBlocks.TIN_ORE);
+                        output.accept(ModBlocks.ZINC_ORE);
+                        output.accept(Blocks.COPPER_ORE);
+                        output.accept(ModBlocks.ALUMINUM_ORE);
                         output.accept(ModBlocks.CHROMIUM_ORE);
+                        output.accept(Blocks.GOLD_ORE);
+                        output.accept(ModBlocks.CADMIUM_ORE);
                         output.accept(ModBlocks.SILVER_ORE);
 
+                        output.accept(Blocks.DEEPSLATE_IRON_ORE);
                         output.accept(ModBlocks.DEEPSLATE_TIN_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_ZINC_ORE);
+                        output.accept(Blocks.DEEPSLATE_COPPER_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_ALUMINUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_CHROMIUM_ORE);
+                        output.accept(Blocks.DEEPSLATE_GOLD_ORE);
+                        output.accept(ModBlocks.DEEPSLATE_CADMIUM_ORE);
                         output.accept(ModBlocks.DEEPSLATE_SILVER_ORE);
 
                         output.accept(ModBlocks.NETHER_SILVER_ORE);

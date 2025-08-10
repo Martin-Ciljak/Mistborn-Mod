@@ -49,19 +49,30 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
         add(ModBlocks.TIN_ORE.get(),
                 block -> createMultipleDrops(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
-
-        add(ModBlocks.SILVER_ORE.get(),
-                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
-        add(ModBlocks.CHROMIUM_ORE.get(),
-                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
         add(ModBlocks.ZINC_ORE.get(),
                 block -> createOreDrop(ModBlocks.ZINC_ORE.get(), ModItems.RAW_ZINC.get()));
+        add(ModBlocks.ALUMINUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.ALUMINUM_ORE.get(), ModItems.RAW_ALUMINUM.get()));
+        add(ModBlocks.CHROMIUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.CADMIUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.CADMIUM_ORE.get(), ModItems.RAW_CADMIUM.get()));
+        add(ModBlocks.SILVER_ORE.get(),
+                block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+
         add(ModBlocks.DEEPSLATE_TIN_ORE.get(),
                 block -> createMultipleDrops(ModBlocks.DEEPSLATE_TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));
+        add(ModBlocks.DEEPSLATE_ZINC_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_ZINC_ORE.get(), ModItems.RAW_ZINC.get()));
+        add(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get(), ModItems.RAW_ALUMINUM.get()));
         add(ModBlocks.DEEPSLATE_CHROMIUM_ORE.get(),
                 block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+        add(ModBlocks.DEEPSLATE_CADMIUM_ORE.get(),
+                block -> createOreDrop(ModBlocks.DEEPSLATE_CADMIUM_ORE.get(), ModItems.RAW_CADMIUM.get()));
         add(ModBlocks.DEEPSLATE_SILVER_ORE.get(),
                 block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
+
         add(ModBlocks.NETHER_SILVER_ORE.get(),
                 block -> createOreDrop(ModBlocks.SILVER_ORE.get(), ModItems.RAW_SILVER.get()));
         add(ModBlocks.END_SILVER_ORE.get(),

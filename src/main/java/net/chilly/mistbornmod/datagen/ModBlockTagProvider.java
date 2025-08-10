@@ -35,12 +35,19 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.DEEPSLATE_TIN_ORE.get())
                 .add(ModBlocks.TIN_BLOCK.get());
         tag(BlockTags.NEEDS_IRON_TOOL)
-                .add(ModBlocks.SILVER_ORE.get())
+                .add(ModBlocks.ZINC_ORE.get())
+                .add(ModBlocks.ALUMINUM_ORE.get())
                 .add(ModBlocks.CHROMIUM_ORE.get())
-                .add(ModBlocks.DEEPSLATE_SILVER_ORE.get())
+                .add(ModBlocks.CADMIUM_ORE.get())
+                .add(ModBlocks.SILVER_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ZINC_ORE.get())
+                .add(ModBlocks.DEEPSLATE_ALUMINUM_ORE.get())
                 .add(ModBlocks.DEEPSLATE_CHROMIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_CADMIUM_ORE.get())
+                .add(ModBlocks.DEEPSLATE_SILVER_ORE.get())
                 .add(ModBlocks.NETHER_SILVER_ORE.get())
                 .add(ModBlocks.END_SILVER_ORE.get());
+
         tag(BlockTags.FENCES)
                 .add(ModBlocks.STEEL_FENCE.get());
         tag(BlockTags.FENCE_GATES)
@@ -52,6 +59,7 @@ public class ModBlockTagProvider extends BlockTagsProvider {
         tag(ModTags.Blocks.INCORRECT_FOR_OBSIDIAN_TOOL)
                 .addTag(BlockTags.INCORRECT_FOR_STONE_TOOL)
                 .remove(ModTags.Blocks.NEEDS_OBSIDIAN_TOOL);
+
         this.tag(BlockTags.LOGS_THAT_BURN)
                 .add(ModBlocks.ASPEN_LOG.get())
                 .add(ModBlocks.ASPEN_WOOD.get())
