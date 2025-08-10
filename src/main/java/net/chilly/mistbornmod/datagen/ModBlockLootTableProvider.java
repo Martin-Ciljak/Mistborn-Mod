@@ -33,8 +33,21 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-        dropSelf(ModBlocks.TIN_BLOCK.get());
         dropSelf(ModBlocks.STEEL_BLOCK.get());
+        dropSelf(ModBlocks.TIN_BLOCK.get());
+        dropSelf(ModBlocks.PEWTER_BLOCK.get());
+        dropSelf(ModBlocks.ZINC_BLOCK.get());
+        dropSelf(ModBlocks.BRASS_BLOCK.get());
+        dropSelf(ModBlocks.BRONZE_BLOCK.get());
+        dropSelf(ModBlocks.ALUMINUM_BLOCK.get());
+        dropSelf(ModBlocks.DURALUMIN_BLOCK.get());
+        dropSelf(ModBlocks.CHROMIUM_BLOCK.get());
+        dropSelf(ModBlocks.NICROSIL_BLOCK.get());
+        dropSelf(ModBlocks.ELECTRUM_BLOCK.get());
+        dropSelf(ModBlocks.CADMIUM_BLOCK.get());
+        dropSelf(ModBlocks.BENDALLOY_BLOCK.get());
+        dropSelf(ModBlocks.SILVER_BLOCK.get());
+
         dropSelf(ModBlocks.STEEL_STAIRS.get());
         add(ModBlocks.STEEL_SLAB.get(), block -> createSlabItemTable(ModBlocks.STEEL_SLAB.get()));
         dropSelf(ModBlocks.STEEL_PRESSURE_PLATE.get());
@@ -45,7 +58,6 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
         add(ModBlocks.STEEL_DOOR.get(), block -> createDoorTable(ModBlocks.STEEL_DOOR.get()));
         dropSelf(ModBlocks.STEEL_TRAPDOOR.get());
         dropSelf(ModBlocks.STEEL_LAMP.get());
-
 
         add(ModBlocks.TIN_ORE.get(),
                 block -> createMultipleDrops(ModBlocks.TIN_ORE.get(), ModItems.RAW_TIN.get(), 2, 4));

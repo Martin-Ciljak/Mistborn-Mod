@@ -32,17 +32,36 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         List<ItemLike> CADMIUM_SMELTABLES = List.of(ModItems.RAW_CADMIUM, ModBlocks.CADMIUM_ORE, ModBlocks.DEEPSLATE_CADMIUM_ORE);
         List<ItemLike> SILVER_SMELTABLES = List.of(ModItems.RAW_SILVER, ModBlocks.SILVER_ORE, ModBlocks.DEEPSLATE_SILVER_ORE, ModBlocks.NETHER_SILVER_ORE, ModBlocks.END_SILVER_ORE);
 
-        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.TIN_BLOCK.get())
-                .pattern("TTT")
-                .pattern("TTT")
-                .pattern("TTT")
-                .define('T', ModItems.TIN_INGOT.get())
-                .unlockedBy("has_tin_ingot", has(ModItems.TIN_INGOT)).save(recipeOutput);
+        // blocks from ingots
+        metalBlock(recipeOutput, ModItems.STEEL_INGOT.get(), ModBlocks.STEEL_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.TIN_INGOT.get(), ModBlocks.TIN_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.PEWTER_INGOT.get(), ModBlocks.PEWTER_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.ZINC_INGOT.get(), ModBlocks.ZINC_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.BRASS_INGOT.get(), ModBlocks.BRASS_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.BRONZE_INGOT.get(), ModBlocks.BRONZE_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.ALUMINUM_INGOT.get(), ModBlocks.ALUMINUM_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.DURALUMIN_INGOT.get(), ModBlocks.DURALUMIN_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.CHROMIUM_INGOT.get(), ModBlocks.CHROMIUM_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.NICROSIL_INGOT.get(), ModBlocks.NICROSIL_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.ELECTRUM_INGOT.get(), ModBlocks.ELECTRUM_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.CADMIUM_INGOT.get(), ModBlocks.CADMIUM_BLOCK.get());
+        metalBlock(recipeOutput, ModItems.BENDALLOY_INGOT.get(), ModBlocks.BENDALLOY_BLOCK.get());
 
-//      INGOTS FROM BLOCKS
-        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.TIN_INGOT.get(), 9)
-                .requires(ModBlocks.TIN_BLOCK)
-                .unlockedBy("has_tin_block", has(ModBlocks.TIN_BLOCK)).save(recipeOutput, "mistborn:tin_ingot_from_tin_block");
+
+        // INGOTS FROM BLOCKS
+        metalIngotFromBlock(recipeOutput, ModBlocks.STEEL_BLOCK.get(), ModItems.STEEL_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.TIN_BLOCK.get(), ModItems.TIN_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.PEWTER_BLOCK.get(), ModItems.PEWTER_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.ZINC_BLOCK.get(), ModItems.ZINC_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.BRASS_BLOCK.get(), ModItems.BRASS_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.BRONZE_BLOCK.get(), ModItems.BRONZE_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.ALUMINUM_BLOCK.get(), ModItems.ALUMINUM_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.DURALUMIN_BLOCK.get(), ModItems.DURALUMIN_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.CHROMIUM_BLOCK.get(), ModItems.CHROMIUM_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.NICROSIL_BLOCK.get(), ModItems.NICROSIL_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.ELECTRUM_BLOCK.get(), ModItems.ELECTRUM_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.CADMIUM_BLOCK.get(), ModItems.CADMIUM_INGOT.get());
+        metalIngotFromBlock(recipeOutput, ModBlocks.BENDALLOY_BLOCK.get(), ModItems.BENDALLOY_INGOT.get());
 
 //      ALLOYS
         ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, ModItems.STEEL_INGOT.get(), 9)
@@ -116,6 +135,21 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
         trapdoorBuilder(ModBlocks.STEEL_TRAPDOOR.get(), Ingredient.of(ModItems.STEEL_INGOT.get())).group("steel").unlockedBy("has_steel_ingot", has(ModItems.STEEL_INGOT)).save(recipeOutput);
 
 
+    }
+    protected static void metalBlock(RecipeOutput recipeOutput, ItemLike pIngredient, ItemLike pResult) {
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, pResult)
+                .pattern("###")
+                .pattern("###")
+                .pattern("###")
+                .define('#', pIngredient)
+                .unlockedBy("has_" + getItemName(pIngredient), has(pIngredient)).save(recipeOutput);
+    }
+
+    protected static void metalIngotFromBlock(RecipeOutput recipeOutput, ItemLike pIngredient, ItemLike pResult) {
+        ShapelessRecipeBuilder.shapeless(RecipeCategory.MISC, pResult, 9)
+                .requires(pIngredient)
+                .unlockedBy("has_" + getItemName(pIngredient), has(pIngredient))
+                .save(recipeOutput, "mistborn:" + getItemName(pResult) + "_from_" + getItemName(pIngredient));
     }
 
     protected static void oreSmelting(RecipeOutput recipeOutput, List<ItemLike> pIngredients, RecipeCategory pCategory, ItemLike pResult,

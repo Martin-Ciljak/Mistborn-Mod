@@ -30,8 +30,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        blockWithItem(ModBlocks.TIN_BLOCK);
-        blockWithItem(ModBlocks.STEEL_BLOCK);
 
         blockWithItem(ModBlocks.TIN_ORE);
         blockWithItem(ModBlocks.ZINC_ORE);
@@ -50,6 +48,23 @@ public class ModBlockStateProvider extends BlockStateProvider {
         blockWithItem(ModBlocks.NETHER_SILVER_ORE);
         blockWithItem(ModBlocks.END_SILVER_ORE);
 
+
+        blockWithItem(ModBlocks.STEEL_BLOCK);
+        blockWithItem(ModBlocks.TIN_BLOCK);
+        blockWithItem(ModBlocks.PEWTER_BLOCK);
+        blockWithItem(ModBlocks.ZINC_BLOCK);
+        blockWithItem(ModBlocks.BRASS_BLOCK);
+        blockWithItem(ModBlocks.BRONZE_BLOCK);
+        blockWithItem(ModBlocks.ALUMINUM_BLOCK);
+        blockWithItem(ModBlocks.DURALUMIN_BLOCK);
+        blockWithItem(ModBlocks.CHROMIUM_BLOCK);
+        blockWithItem(ModBlocks.NICROSIL_BLOCK);
+        blockWithItem(ModBlocks.ELECTRUM_BLOCK);
+        blockWithItem(ModBlocks.CADMIUM_BLOCK);
+        blockWithItem(ModBlocks.BENDALLOY_BLOCK);
+        blockWithItem(ModBlocks.SILVER_BLOCK);
+
+
         stairsBlock(ModBlocks.STEEL_STAIRS.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()));
         slabBlock(ModBlocks.STEEL_SLAB.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()), blockTexture(ModBlocks.STEEL_BLOCK.get()));
         pressurePlateBlock(ModBlocks.STEEL_PRESSURE_PLATE.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()));
@@ -59,8 +74,6 @@ public class ModBlockStateProvider extends BlockStateProvider {
         wallBlock(ModBlocks.STEEL_WALL.get(), blockTexture(ModBlocks.STEEL_BLOCK.get()));
         doorBlockWithRenderType(ModBlocks.STEEL_DOOR.get(), modLoc("block/steel_door_bottom"), modLoc("block/steel_door_top"), "cutout");
         trapdoorBlockWithRenderType(ModBlocks.STEEL_TRAPDOOR.get(), modLoc("block/steel_trapdoor"), true ,"cutout");
-
-
 
         blockItem(ModBlocks.STEEL_STAIRS);
         blockItem(ModBlocks.STEEL_SLAB);

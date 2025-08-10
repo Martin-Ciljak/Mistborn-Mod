@@ -34,14 +34,14 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.BRASS_INGOT);
                         output.accept(Items.COPPER_INGOT);
                         output.accept(ModItems.BRONZE_INGOT);
-                        output.accept(ModItems.CHROMIUM_INGOT);
-                        output.accept(ModItems.NICROSIL_INGOT);
                         output.accept(ModItems.ALUMINUM_INGOT);
                         output.accept(ModItems.DURALUMIN_INGOT);
-                        output.accept(ModItems.CADMIUM_INGOT);
-                        output.accept(ModItems.BENDALLOY_INGOT);
+                        output.accept(ModItems.CHROMIUM_INGOT);
+                        output.accept(ModItems.NICROSIL_INGOT);
                         output.accept(Items.GOLD_INGOT);
                         output.accept(ModItems.ELECTRUM_INGOT);
+                        output.accept(ModItems.CADMIUM_INGOT);
+                        output.accept(ModItems.BENDALLOY_INGOT);
                         output.accept(ModItems.SILVER_INGOT);
 
                         output.accept(Items.RAW_IRON);
@@ -53,9 +53,6 @@ public class ModCreativeModeTabs {
                         output.accept(ModItems.RAW_CADMIUM);
                         output.accept(Items.RAW_GOLD);
                         output.accept(ModItems.RAW_SILVER);
-
-                        output.accept(ModBlocks.STEEL_BLOCK);
-                        output.accept(ModBlocks.TIN_BLOCK);
 
                         output.accept(Blocks.IRON_ORE);
                         output.accept(ModBlocks.TIN_ORE);
@@ -79,6 +76,24 @@ public class ModCreativeModeTabs {
 
                         output.accept(ModBlocks.NETHER_SILVER_ORE);
                         output.accept(ModBlocks.END_SILVER_ORE);
+
+                        output.accept(Blocks.IRON_BLOCK);
+                        output.accept(ModBlocks.STEEL_BLOCK);
+                        output.accept(ModBlocks.TIN_BLOCK);
+                        output.accept(ModBlocks.PEWTER_BLOCK);
+                        output.accept(ModBlocks.ZINC_BLOCK);
+                        output.accept(ModBlocks.BRASS_BLOCK);
+                        output.accept(Blocks.COPPER_BLOCK);
+                        output.accept(ModBlocks.BRONZE_BLOCK);
+                        output.accept(ModBlocks.ALUMINUM_BLOCK);
+                        output.accept(ModBlocks.DURALUMIN_BLOCK);
+                        output.accept(ModBlocks.CHROMIUM_BLOCK);
+                        output.accept(ModBlocks.NICROSIL_BLOCK);
+                        output.accept(Blocks.GOLD_BLOCK);
+                        output.accept(ModBlocks.ELECTRUM_BLOCK);
+                        output.accept(ModBlocks.CADMIUM_BLOCK);
+                        output.accept(ModBlocks.BENDALLOY_BLOCK);
+                        output.accept(ModBlocks.SILVER_BLOCK);
 
                         output.accept(ModBlocks.STEEL_STAIRS);
                         output.accept(ModBlocks.STEEL_SLAB);

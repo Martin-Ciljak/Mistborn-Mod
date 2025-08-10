@@ -127,11 +127,104 @@ public class ModBlocks {
 
 
 
+    public static final DeferredBlock<Block> STEEL_BLOCK = registerBlock("steel_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
     public static final DeferredBlock<Block> TIN_BLOCK = registerBlock("tin_block",
             () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(4f)
+                    .strength(5.0F, 6.0F)
                     .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL)));
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> PEWTER_BLOCK = registerBlock("pewter_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> ZINC_BLOCK = registerBlock("zinc_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> BRASS_BLOCK = registerBlock("brass_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.GOLD)
+                    .sound(SoundType.COPPER)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> BRONZE_BLOCK = registerBlock("bronze_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.COLOR_ORANGE)
+                    .sound(SoundType.COPPER)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> ALUMINUM_BLOCK = registerBlock("aluminum_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> DURALUMIN_BLOCK = registerBlock("duralumin_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> CHROMIUM_BLOCK = registerBlock("chromium_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> NICROSIL_BLOCK = registerBlock("nicrosil_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> ELECTRUM_BLOCK = registerBlock("electrum_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.GOLD)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> CADMIUM_BLOCK = registerBlock("cadmium_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> BENDALLOY_BLOCK = registerBlock("bendalloy_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
+    public static final DeferredBlock<Block> SILVER_BLOCK = registerBlock("silver_block",
+            () -> new Block(BlockBehaviour.Properties.of()
+                    .strength(5.0F, 6.0F)
+                    .requiresCorrectToolForDrops()
+                    .mapColor(MapColor.METAL)
+                    .sound(SoundType.METAL)
+                    .instrument(NoteBlockInstrument.IRON_XYLOPHONE)));
 
 
     public static final DeferredBlock<Block> MAGIC_BLOCK = registerBlock("magic_block",
@@ -139,11 +232,6 @@ public class ModBlocks {
                     .strength(2f)
                     .noLootTable()));
 
-    public static final DeferredBlock<Block> STEEL_BLOCK = registerBlock("steel_block",
-            () -> new Block(BlockBehaviour.Properties.of()
-                    .strength(5f)
-                    .requiresCorrectToolForDrops()
-                    .sound(SoundType.METAL)));
 
     public static final DeferredBlock<StairBlock> STEEL_STAIRS = registerBlock("steel_stairs",
             () -> new StairBlock(ModBlocks.STEEL_BLOCK.get().defaultBlockState(),
