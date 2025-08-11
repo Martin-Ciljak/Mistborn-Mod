@@ -12,11 +12,19 @@ import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.levelgen.VerticalAnchor;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
+import net.minecraft.world.level.levelgen.heightproviders.HeightProvider;
 import net.minecraft.world.level.levelgen.placement.*;
 
 import java.util.List;
 
 public class ModPlaceFeatures {
+
+    public static final ResourceKey<PlacedFeature> TIN_ORE_TOP_PLACED_KEY = registerKey("tin_ore_top_placed");
+    public static final ResourceKey<PlacedFeature> TIN_ORE_BOTTOM_PLACED_KEY = registerKey("tin_ore_bottom_placed");
+    public static final ResourceKey<PlacedFeature> ZINC_ORE_PLACED_KEY = registerKey("zinc_ore_placed");
+    public static final ResourceKey<PlacedFeature> ALUMINUM_ORE_PLACED_KEY = registerKey("aluminum_ore_placed");
+    public static final ResourceKey<PlacedFeature> CHROMIUM_ORE_PLACED_KEY = registerKey("chromium_ore_placed");
+    public static final ResourceKey<PlacedFeature> CADMIUM_ORE_PLACED_KEY = registerKey("cadmium_ore_placed");
     public static final ResourceKey<PlacedFeature> SILVER_ORE_PLACED_KEY = registerKey("silver_ore_placed");
     public static final ResourceKey<PlacedFeature> NETHER_SILVER_ORE_PLACED_KEY = registerKey("nether_silver_ore_placed");
     public static final ResourceKey<PlacedFeature> END_SILVER_ORE_PLACED_KEY = registerKey("end_silver_ore_placed");
@@ -27,8 +35,32 @@ public class ModPlaceFeatures {
     public static void bootstrap(BootstrapContext<PlacedFeature> context) {
         var configuredFeatures = context.lookup(Registries.CONFIGURED_FEATURE);
 
+        register(context, TIN_ORE_TOP_PLACED_KEY, configuredFeatures.getOrThrow(
+                ModConfiguredFeatures.ORE_TIN),
+                ModOrePlacement.commonOrePlacement(
+                        80, HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(30),
+                                VerticalAnchor.absolute(200))));
+        register(context, TIN_ORE_BOTTOM_PLACED_KEY, configuredFeatures.getOrThrow(
+                ModConfiguredFeatures.ORE_TIN),
+                ModOrePlacement.commonOrePlacement(
+                        24, HeightRangePlacement.uniform(
+                                VerticalAnchor.absolute(-64),
+                                VerticalAnchor.absolute(-0))));
+        register(context, ZINC_ORE_PLACED_KEY, configuredFeatures.getOrThrow(
+                ModConfiguredFeatures.ORE_ZINC),
+                ModOrePlacement.commonOrePlacement(
+                        16, HeightRangePlacement.triangle(
+                                VerticalAnchor.absolute(-30),
+                                VerticalAnchor.absolute(40))));
+        register(context, ALUMINUM_ORE_PLACED_KEY, configuredFeatures.getOrThrow(
+                        ModConfiguredFeatures.ORE_ALUMINUM),
+                ModOrePlacement.commonOrePlacement(
+                        10, HeightRangePlacement.triangle(
+                                VerticalAnchor.absolute(-6),
+                                VerticalAnchor.absolute(6))));
         register(context, SILVER_ORE_PLACED_KEY, configuredFeatures.getOrThrow(
-                ModConfiguredFeatures.OVERWORLD_SILVER_ORE_KEY),
+                ModConfiguredFeatures.ORE_SILVER),
                 ModOrePlacement.commonOrePlacement(
                         12, HeightRangePlacement.uniform(
                                 VerticalAnchor.absolute(-64),
@@ -44,7 +76,7 @@ public class ModPlaceFeatures {
                 ModOrePlacement.commonOrePlacement(
                         12, HeightRangePlacement.uniform(
                                 VerticalAnchor.absolute(-64),
-                                VerticalAnchor.absolute(12))));
+                                VerticalAnchor.absolute(50))));
 
         register(context, ASPEN_PLACED_KEY, configuredFeatures.getOrThrow(
                 ModConfiguredFeatures.ASPEN_KEY),

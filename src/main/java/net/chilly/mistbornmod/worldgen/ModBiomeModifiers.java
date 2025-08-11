@@ -15,7 +15,7 @@ import net.neoforged.neoforge.common.world.BiomeModifiers;
 import net.neoforged.neoforge.registries.NeoForgeRegistries;
 
 public class ModBiomeModifiers {
-    public static final ResourceKey<BiomeModifier> ADD_SILVER_ORE = registerKey("add_silver_ore");
+    public static final ResourceKey<BiomeModifier> ADD_OVERWORLD_ORES = registerKey("add_overworld_ores");
     public static final ResourceKey<BiomeModifier> ADD_NETHER_SILVER_ORE = registerKey("add_nether_silver_ore");
     public static final ResourceKey<BiomeModifier> ADD_END_SILVER_ORE = registerKey("add_end_silver_ore");
 
@@ -28,10 +28,15 @@ public class ModBiomeModifiers {
         var placedFeatures = context.lookup(Registries.PLACED_FEATURE);
         var biomes = context.lookup(Registries.BIOME);
 
-        context.register(ADD_SILVER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
+        context.register(ADD_OVERWORLD_ORES, new BiomeModifiers.AddFeaturesBiomeModifier(
                 biomes.getOrThrow(BiomeTags.IS_OVERWORLD),
 //                HolderSet.direct(biomes.getOrThrow(Biomes.PLAINS), biomes.getOrThrow(Biomes.BADLANDS)),
-                HolderSet.direct(placedFeatures.getOrThrow(ModPlaceFeatures.SILVER_ORE_PLACED_KEY)),
+                HolderSet.direct(
+                        placedFeatures.getOrThrow(ModPlaceFeatures.TIN_ORE_BOTTOM_PLACED_KEY),
+                        placedFeatures.getOrThrow(ModPlaceFeatures.TIN_ORE_TOP_PLACED_KEY),
+                        placedFeatures.getOrThrow(ModPlaceFeatures.ZINC_ORE_PLACED_KEY),
+                        placedFeatures.getOrThrow(ModPlaceFeatures.ALUMINUM_ORE_PLACED_KEY),
+                        placedFeatures.getOrThrow(ModPlaceFeatures.SILVER_ORE_PLACED_KEY)),
                 GenerationStep.Decoration.UNDERGROUND_ORES
         ));
         context.register(ADD_NETHER_SILVER_ORE, new BiomeModifiers.AddFeaturesBiomeModifier(
