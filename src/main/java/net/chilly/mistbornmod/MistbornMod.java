@@ -3,11 +3,15 @@ package net.chilly.mistbornmod;
 import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.component.ModDataComponents;
 import net.chilly.mistbornmod.effect.ModEffects;
+import net.chilly.mistbornmod.entity.ModEntities;
+import net.chilly.mistbornmod.entity.client.GeckoRenderer;
+import net.chilly.mistbornmod.entity.client.KolossRenderer;
 import net.chilly.mistbornmod.item.ModCreativeModeTabs;
 import net.chilly.mistbornmod.item.ModItems;
 import net.chilly.mistbornmod.potion.ModPotions;
 import net.chilly.mistbornmod.util.ModItemProperties;
 import net.chilly.mistbornmod.worldgen.tree.ModFoliagePlacers;
+import net.minecraft.client.renderer.entity.EntityRenderers;
 import net.minecraft.world.item.CreativeModeTabs;
 import org.slf4j.Logger;
 
@@ -52,8 +56,8 @@ public class MistbornMod {
         ModDataComponents.register(modEventBus);
         ModEffects.register(modEventBus);
         ModPotions.register(modEventBus);
-
         ModFoliagePlacers.register(modEventBus);
+        ModEntities.register(modEventBus);
         // Register the item to a creative tab
         modEventBus.addListener(this::addCreative);
 
@@ -99,8 +103,10 @@ public class MistbornMod {
     static class ClientModEvents {
         @SubscribeEvent
         static void onClientSetup(FMLClientSetupEvent event) {
-            LOGGER.debug("HELLO 1");
             ModItemProperties.addCustomItemProperties();
+
+            EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
+            EntityRenderers.register(ModEntities.KOLOSS.get(), KolossRenderer::new);
 
         }
     }

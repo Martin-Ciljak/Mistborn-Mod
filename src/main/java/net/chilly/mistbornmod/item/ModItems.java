@@ -2,6 +2,7 @@ package net.chilly.mistbornmod.item;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.entity.ModEntities;
 import net.chilly.mistbornmod.item.custom.ChiselItem;
 import net.chilly.mistbornmod.item.custom.ModArmorItem;
 import net.chilly.mistbornmod.item.custom.TutorialHammerItem;
@@ -9,6 +10,7 @@ import net.chilly.mistbornmod.item.custom.VentureWineItem;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.item.*;
 import net.neoforged.bus.api.IEventBus;
+import net.neoforged.neoforge.common.DeferredSpawnEggItem;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 
@@ -121,6 +123,12 @@ public class ModItems {
             () -> new ChiselItem(new Item.Properties().durability(32)));
     public static final DeferredItem<Item> TUTORIAL_BOW = ITEMS.register("tutorial_bow",
             () -> new BowItem(new Item.Properties().durability(500)));
+    public static final DeferredItem<Item> GECKO_SPAWN_EGG = ITEMS.register("gecko_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.GECKO, 0x31afaf, 0xffac00,
+                    new Item.Properties()));
+    public static final DeferredItem<Item> KOLOSS_SPAWN_EGG = ITEMS.register("koloss_spawn_egg",
+            () -> new DeferredSpawnEggItem(ModEntities.KOLOSS, 0x31afaf, 0xffac00,
+                    new Item.Properties()));
 
 
     public static void register(IEventBus eventBus) {

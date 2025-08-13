@@ -130,6 +130,8 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.ASPEN_SAPLING);
                         output.accept(ModBlocks.ASPEN_LEAVES);
 
+                        output.accept(ModItems.KOLOSS_SPAWN_EGG);
+
                     }).build());
 
     public static final Supplier<CreativeModeTab> TUTORIAL_ITEMS_TAB = CREATIVE_MOD_TAB.register("tutorial_items_tab",
@@ -141,6 +143,7 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.MAGIC_BLOCK);
                         output.accept(ModItems.IRON_HAMMER);
                         output.accept(ModItems.TUTORIAL_BOW);
+                        output.accept(ModItems.GECKO_SPAWN_EGG);
                     }).build());
 
 
