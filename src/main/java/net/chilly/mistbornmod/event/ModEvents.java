@@ -2,6 +2,7 @@ package net.chilly.mistbornmod.event;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.effect.ModEffects;
+import net.chilly.mistbornmod.entity.custom.KolossEntity;
 import net.chilly.mistbornmod.item.ModItems;
 import net.chilly.mistbornmod.item.custom.TutorialHammerItem;
 import net.chilly.mistbornmod.potion.ModPotions;
@@ -15,6 +16,7 @@ import net.minecraft.world.InteractionResult;
 import net.minecraft.world.damagesource.DamageSource;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityDimensions;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.animal.Sheep;
 import net.minecraft.world.entity.player.Player;
@@ -32,6 +34,7 @@ import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.InputEvent;
 import net.neoforged.neoforge.client.event.RenderLevelStageEvent;
 import net.neoforged.neoforge.event.brewing.RegisterBrewingRecipesEvent;
+import net.neoforged.neoforge.event.entity.EntityEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.living.LivingIncomingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
@@ -221,5 +224,32 @@ public class ModEvents {
 
         builder.addMix(Potions.AWKWARD, Items.COMMAND_BLOCK, ModPotions.ADMIN_POTION);
         builder.addMix(ModPotions.ADMIN_POTION, ModItems.PEWTER_INGOT.get(), ModPotions.PEWTER_POTION);
+    }
+
+    @SubscribeEvent
+    public static void onEntitySize(EntityEvent.Size event) {
+        if (event.getEntity() instanceof KolossEntity koloss) {
+            EntityDimensions newSize;
+            float newEyeHeight;
+
+            switch (koloss.getTypeAgeState()) {
+                case 0 -> { // young
+                    newSize = EntityDimensions.scalable(0.6f, 1.2f);
+                }
+                case 1 -> { // middle
+                    newSize = EntityDimensions.scalable(1.0f, 2.2f);
+                }
+                case 2 -> { // old
+                    newSize = EntityDimensions.scalable(1.4f, 3.0f);
+                }
+                case 3 -> { // very old
+                    newSize = EntityDimensions.scalable(1.8f, 3.5f);
+                }
+                default -> { return; }
+            }
+
+            // 🔑 This only changes the hitbox/eye height, not the model scaling
+            event.setNewSize(newSize);
+        }
     }
 }
