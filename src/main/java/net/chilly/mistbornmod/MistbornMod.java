@@ -4,8 +4,11 @@ import net.chilly.mistbornmod.block.ModBlocks;
 import net.chilly.mistbornmod.component.ModDataComponents;
 import net.chilly.mistbornmod.effect.ModEffects;
 import net.chilly.mistbornmod.entity.ModEntities;
+import net.chilly.mistbornmod.entity.client.ClipProjectileRenderer;
 import net.chilly.mistbornmod.entity.client.GeckoRenderer;
 import net.chilly.mistbornmod.entity.client.KolossRenderer;
+import net.chilly.mistbornmod.entity.client.TomahawkProjectileRenderer;
+import net.chilly.mistbornmod.entity.custom.ClipProjectileEntity;
 import net.chilly.mistbornmod.item.ModCreativeModeTabs;
 import net.chilly.mistbornmod.item.ModItems;
 import net.chilly.mistbornmod.potion.ModPotions;
@@ -107,6 +110,8 @@ public class MistbornMod {
 
             EntityRenderers.register(ModEntities.GECKO.get(), GeckoRenderer::new);
             EntityRenderers.register(ModEntities.KOLOSS.get(), KolossRenderer::new);
+            EntityRenderers.register(ModEntities.TOMAHAWK.get(), TomahawkProjectileRenderer::new);
+            EntityRenderers.register(ModEntities.CLIP.get(), ClipProjectileRenderer::new);
 
         }
     }

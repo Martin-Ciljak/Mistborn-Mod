@@ -81,6 +81,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.BAYWRAP.get());
         basicItem(ModItems.VENTURE_WINE.get());
 
+        basicItem(ModItems.CLIP.get());
+
 
 
 //        basicItem(ModItems.CHISEL.get());

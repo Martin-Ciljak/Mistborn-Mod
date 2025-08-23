@@ -109,8 +109,13 @@
   "item.minecraft.splash_potion.effect.admin_potion": "Admin Splash Potion",
   "item.minecraft.lingering_potion.effect.admin_potion": "Admin Lingering Potion",
 
+  "item.mistborn.clip": "Imperial Clip",
+  "item.mistborn.tomahawk": "Tomahawk",
+
   "entity.mistborn.gecko": "Gecko",
   "entity.mistborn.koloss": "Koloss",
+  "entity.mistborn.tomahawk": "Tomahawk",
+  "entity.mistborn.clip": "Clip",
 
   "tooltip.mistborn.magic_block.tooltip": "This block is very very §9mMAGICAL§r",
   "tooltip.mistborn.venture_wine.shift_down": "Very expensive wine straight from §6Straff Venture's§r personal collection. Some say that it §cburns§r really well...",
