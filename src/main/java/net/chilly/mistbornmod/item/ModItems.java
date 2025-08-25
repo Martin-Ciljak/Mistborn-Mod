@@ -116,6 +116,9 @@ public class ModItems {
     public static final DeferredItem<Item> CLIP = ITEMS.register("clip",
             () -> new ClipItem(new Item.Properties().stacksTo(64)));
 
+    public static final DeferredItem<Item> ASH = ITEMS.register("ash",
+            () -> new ItemNameBlockItem(ModBlocks.ASH_RESIDUE.get(), new Item.Properties()));
+
     // ITEMS TO BE DELETED
     // ONLY USED FOR LEARNING NEOFORGE
 

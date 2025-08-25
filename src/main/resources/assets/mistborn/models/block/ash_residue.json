@@ -1,0 +1,17 @@
+{
+  "ambientocclusion": false,
+  "render_type": "minecraft:cutout",
+  "textures": {
+    "particle": "mistborn:block/ash_residue",
+    "ash_residue": "mistborn:block/ash_residue"
+  },
+  "elements": [
+    {   "from": [ 0, 0, 0.1 ],
+      "to": [ 16, 16, 0.1 ],
+      "faces": {
+        "north": { "uv": [ 16, 0, 0, 16 ], "texture": "#ash_residue" },
+        "south": { "uv": [ 0, 0, 16, 16 ], "texture": "#ash_residue" }
+      }
+    }
+  ]
+}

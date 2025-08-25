@@ -1,6 +1,7 @@
 package net.chilly.mistbornmod.datagen;
 
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.block.custom.AshLayerBlock;
 import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
 import net.chilly.mistbornmod.item.ModItems;
 import net.minecraft.advancements.critereon.StatePropertiesPredicate;
@@ -8,20 +9,24 @@ import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.loot.BlockLootSubProvider;
-import net.minecraft.world.flag.FeatureFlagSet;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.SweetBerryBushBlock;
+import net.minecraft.world.level.storage.loot.LootContext;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
+import net.minecraft.world.level.storage.loot.entries.AlternativesEntry;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
 import net.minecraft.world.level.storage.loot.predicates.LootItemCondition;
+import net.minecraft.world.level.storage.loot.predicates.LootItemEntityPropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 
 import java.util.Set;
@@ -118,6 +123,47 @@ public class ModBlockLootTableProvider extends BlockLootSubProvider {
                 )
         );
 
+        this.add(
+                ModBlocks.ASH_LAYER.get(),
+                block -> LootTable.lootTable()
+                        .withPool(
+                                LootPool.lootPool()
+                                        .when(LootItemEntityPropertyCondition.entityPresent(LootContext.EntityTarget.THIS))
+                                        .add(
+                                                AlternativesEntry.alternatives(
+                                                        AlternativesEntry.alternatives(
+                                                                        AshLayerBlock.LAYERS.getPossibleValues(),
+                                                                        layers -> LootItem.lootTableItem(ModItems.ASH.get())
+                                                                                .when(
+                                                                                        LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                                .setProperties(
+                                                                                                        StatePropertiesPredicate.Builder.properties()
+                                                                                                                .hasProperty(AshLayerBlock.LAYERS, layers.intValue())
+                                                                                                )
+                                                                                )
+                                                                                .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers.intValue())))
+                                                                )
+                                                                .when(this.doesNotHaveSilkTouch()),
+                                                        AlternativesEntry.alternatives(
+                                                                AshLayerBlock.LAYERS.getPossibleValues(),
+                                                                layers -> layers == 8
+                                                                        ? LootItem.lootTableItem(ModBlocks.ASH_BLOCK)
+                                                                        : LootItem.lootTableItem(ModBlocks.ASH_LAYER)
+                                                                        .apply(SetItemCountFunction.setCount(ConstantValue.exactly((float)layers.intValue())))
+                                                                        .when(
+                                                                                LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                                                                        .setProperties(
+                                                                                                StatePropertiesPredicate.Builder.properties()
+                                                                                                        .hasProperty(AshLayerBlock.LAYERS, layers.intValue())
+                                                                                        )
+                                                                        )
+                                                        )
+                                                )
+                                        )
+                        )
+        );
+        this.add(ModBlocks.ASH_BLOCK.get(), block -> this.createSingleItemTableWithSilkTouch(block, ModItems.ASH.get(), ConstantValue.exactly(4.0F)));
+        this.add(ModBlocks.ASH_RESIDUE.get(), block -> this.createSingleItemTable(ModItems.ASH.get()));
         this.dropSelf(ModBlocks.ASPEN_LOG.get());
         this.dropSelf(ModBlocks.ASPEN_WOOD.get());
         this.dropSelf(ModBlocks.STRIPPED_ASPEN_LOG.get());

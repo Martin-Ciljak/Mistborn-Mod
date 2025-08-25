@@ -2,6 +2,7 @@ package net.chilly.mistbornmod.datagen;
 
 import net.chilly.mistbornmod.MistbornMod;
 import net.chilly.mistbornmod.block.ModBlocks;
+import net.chilly.mistbornmod.block.custom.AshLayerBlock;
 import net.chilly.mistbornmod.block.custom.BarleyCropBlock;
 import net.chilly.mistbornmod.block.custom.FruitBushBlock;
 import net.chilly.mistbornmod.block.custom.SteelLampBlock;
@@ -102,8 +103,27 @@ public class ModBlockStateProvider extends BlockStateProvider {
         leavesBlock(ModBlocks.ASPEN_LEAVES);
         saplingBlock(ModBlocks.ASPEN_SAPLING);
 
+        getVariantBuilder(ModBlocks.ASH_LAYER.get()).forAllStates(state -> {
+            int layers = state.getValue(AshLayerBlock.LAYERS);
+            ModelFile model;
+            if (layers != 8) {
+                model = models().withExistingParent("ash_layer_" + layers, mcLoc("block/snow_height" + layers * 2))
+                        .texture("texture", modLoc("block/ash"))
+                        .texture("particle", modLoc("block/ash"));
+            } else {
+                model = models().withExistingParent("ash_layer_" + layers, mcLoc("block/snow_block"))
+                        .texture("texture", modLoc("block/ash"))
+                        .texture("particle", modLoc("block/ash"));
+            }
+            return ConfiguredModel.builder().modelFile(model).build();
+        });
+        simpleBlockWithItem(ModBlocks.ASH_BLOCK.get(), models().cubeAll(ModBlocks.ASH_BLOCK.getId().toString(), modLoc("block/ash")));
+//        simpleBlock(ModBlocks.ASH_RESIDUE.get(),
+//                models().withExistingParent("ash_residue", mcLoc("block/glow_lichen"))
+//                        .texture("texture", modLoc("block/" + "ash_residue")));
 
     }
+
 
     private void saplingBlock(DeferredBlock<Block> blockRegistryObject) {
         simpleBlock(blockRegistryObject.get(),

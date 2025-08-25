@@ -48,7 +48,9 @@ public class ModBlockTagProvider extends BlockTagsProvider {
                 .add(ModBlocks.CADMIUM_BLOCK.get())
                 .add(ModBlocks.BENDALLOY_BLOCK.get())
                 .add(ModBlocks.SILVER_BLOCK.get());
-
+        tag(BlockTags.MINEABLE_WITH_SHOVEL)
+                .add(ModBlocks.ASH_LAYER.get())
+                .add(ModBlocks.ASH_BLOCK.get());
         tag(BlockTags.NEEDS_STONE_TOOL)
                 .add(ModBlocks.TIN_ORE.get())
                 .add(ModBlocks.ZINC_ORE.get())

@@ -102,6 +102,8 @@ public class ModItemModelProvider extends ItemModelProvider {
         withExistingParent(ModItems.GECKO_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
         withExistingParent(ModItems.KOLOSS_SPAWN_EGG.getId().getPath(), mcLoc("item/template_spawn_egg"));
 
+        basicItem(ModItems.ASH.get());
+
 
     }
 

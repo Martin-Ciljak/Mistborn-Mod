@@ -18,6 +18,7 @@ import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.block.state.properties.WoodType;
 import net.minecraft.world.level.material.MapColor;
+import net.minecraft.world.level.material.PushReaction;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.registries.DeferredBlock;
 import net.neoforged.neoforge.registries.DeferredRegister;
@@ -311,6 +312,18 @@ public class ModBlocks {
     public static final DeferredBlock<Block> ASPEN_SAPLING = registerBlock("aspen_sapling",
             () -> new ModSaplingBlock(ModTreeGrowers.ASPEN, BlockBehaviour.Properties.ofFullCopy(Blocks.OAK_SAPLING), () -> Blocks.GRAVEL));
 
+    public static final DeferredBlock<Block> ASH_LAYER = registerBlock("ash_layer",
+            () -> new AshLayerBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW)));
+    public static final DeferredBlock<Block> ASH_BLOCK = registerBlock("ash_block",
+            () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.SNOW_BLOCK)));
+    public static final DeferredBlock<Block> ASH_RESIDUE = BLOCKS.register("ash_residue",
+            () -> new AshResidueBlock(BlockBehaviour.Properties.of()
+                    .mapColor(MapColor.STONE)
+                    .replaceable()
+                    .noCollission()
+                    .strength(0.2f)
+                    .sound(SoundType.SNOW)
+                    .pushReaction(PushReaction.DESTROY)));
 
     private static <T extends  Block> DeferredBlock<T> registerBlock(String name, Supplier<T> block) {
         DeferredBlock<T> toReturn = BLOCKS.register(name, block);

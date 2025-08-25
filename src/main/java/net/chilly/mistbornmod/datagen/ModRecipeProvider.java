@@ -104,6 +104,17 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
                 .unlockedBy("has_cooked_barley", has(ModItems.COOKED_BARLEY.get())).save(recipeOutput);
 
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ASH_BLOCK.get())
+                .pattern("##")
+                .pattern("##")
+                .define('#', ModItems.ASH.get())
+                .unlockedBy("has_" + getItemName(ModItems.ASH), has(ModItems.ASH)).save(recipeOutput);
+        ShapedRecipeBuilder.shaped(RecipeCategory.MISC, ModBlocks.ASH_LAYER.get(), 6)
+                .pattern("###")
+                .define('#', ModBlocks.ASH_BLOCK.get())
+                .unlockedBy("has_" + getItemName(ModBlocks.ASH_BLOCK), has(ModBlocks.ASH_BLOCK)).save(recipeOutput);
+
+
         SimpleCookingRecipeBuilder.smelting(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 200)
                 .unlockedBy("has_barley", has(ModItems.BARLEY)).save(recipeOutput);
         SimpleCookingRecipeBuilder.smoking(Ingredient.of(ModItems.BARLEY.get()), RecipeCategory.MISC, ModItems.COOKED_BARLEY.get(), 0.35f, 100)
