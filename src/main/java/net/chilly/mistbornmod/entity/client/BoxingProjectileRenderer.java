@@ -10,12 +10,12 @@ import net.minecraft.client.renderer.entity.EntityRendererProvider;
 import net.minecraft.client.renderer.texture.OverlayTexture;
 import net.minecraft.resources.ResourceLocation;
 
-public class ClipProjectileRenderer extends EntityRenderer<CoinProjectileEnity> {
-    private ClipProjectileModel model;
+public class BoxingProjectileRenderer extends EntityRenderer<CoinProjectileEnity> {
+    private BoxingProjectileModel model;
 
-    public ClipProjectileRenderer(EntityRendererProvider.Context context) {
+    public BoxingProjectileRenderer(EntityRendererProvider.Context context) {
         super(context);
-        this.model = new ClipProjectileModel(context.bakeLayer(ClipProjectileModel.LAYER_LOCATION));
+        this.model = new BoxingProjectileModel(context.bakeLayer(BoxingProjectileModel.LAYER_LOCATION));
     }
 
     @Override
@@ -43,6 +43,6 @@ public class ClipProjectileRenderer extends EntityRenderer<CoinProjectileEnity> 
 
     @Override
     public ResourceLocation getTextureLocation(CoinProjectileEnity entity) {
-        return ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "textures/entity/clip/clip.png");
+        return ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "textures/entity/clip/boxing.png");
     }
 }

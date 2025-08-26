@@ -26,6 +26,12 @@ public class ModCreativeModeTabs {
             () -> CreativeModeTab.builder().icon(() -> new ItemStack(ModItems.TIN_INGOT.get()))
                     .title(Component.translatable("creativetab.mistborn.mistborn_items"))
                     .displayItems((itemDisplayParameters, output) -> {
+                        output.accept(ModItems.BOXING);
+                        output.accept(ModItems.CLIP);
+
+                        output.accept(ModItems.GLASS_DAGGER);
+                        output.accept(ModItems.INQUISITOR_AXE);
+
                         output.accept(Items.IRON_INGOT);
                         output.accept(ModItems.STEEL_INGOT);
                         output.accept(ModItems.TIN_INGOT);
@@ -105,8 +111,9 @@ public class ModCreativeModeTabs {
                         output.accept(ModBlocks.STEEL_DOOR);
                         output.accept(ModBlocks.STEEL_TRAPDOOR);
 
-                        output.accept(ModItems.GLASS_DAGGER);
-                        output.accept(ModItems.INQUISITOR_AXE);
+                        output.accept(ModItems.ASH);
+                        output.accept(ModBlocks.ASH_BLOCK);
+                        output.accept(ModBlocks.ASH_LAYER);
 
                         output.accept(ModItems.ALUMINUM_HELMET);
                         output.accept(ModItems.MISTCLOAK);

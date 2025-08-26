@@ -114,7 +114,9 @@ public class ModItems {
                     new Item.Properties()));
 
     public static final DeferredItem<Item> CLIP = ITEMS.register("clip",
-            () -> new ClipItem(new Item.Properties().stacksTo(64)));
+            () -> new CoinItem(ModEntities.CLIP.get(), new Item.Properties().stacksTo(64)));
+    public static final DeferredItem<Item> BOXING = ITEMS.register("boxing",
+            () -> new CoinItem(ModEntities.BOXING.get(), new Item.Properties().stacksTo(16)));
 
     public static final DeferredItem<Item> ASH = ITEMS.register("ash",
             () -> new ItemNameBlockItem(ModBlocks.ASH_RESIDUE.get(), new Item.Properties()));

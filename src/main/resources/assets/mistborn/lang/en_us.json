@@ -36,6 +36,8 @@
   "item.mistborn.aluminum_helmet": "Aluminum Helmet",
   "item.mistborn.aluminum_horse_armor": "Aluminum Horse Armor",
 
+  "item.mistborn.ash": "Ash",
+
   "item.mistborn.gecko_spawn_egg": "Gecko Spawn Egg",
   "item.mistborn.koloss_spawn_egg": "Koloss Spawn Egg",
 
@@ -91,6 +93,10 @@
   "block.mistborn.barley_crop": "Barley Crop",
   "block.mistborn.fruit_crop": "Fruit Crop",
 
+  "block.mistborn.ash_block": "Block of Ash",
+  "block.mistborn.ash_layer": "Ash Layer",
+  "block.mistborn.ash_residue": "Ash Residue",
+
   "creativetab.mistborn.mistborn_items": "Mistborn Items",
   "creativetab.mistborn.tutorial_items": "Tutorial Items",
 
@@ -110,12 +116,14 @@
   "item.minecraft.lingering_potion.effect.admin_potion": "Admin Lingering Potion",
 
   "item.mistborn.clip": "Imperial Clip",
+  "item.mistborn.boxing": "Imperial Boxing",
   "item.mistborn.tomahawk": "Tomahawk",
 
   "entity.mistborn.gecko": "Gecko",
   "entity.mistborn.koloss": "Koloss",
   "entity.mistborn.tomahawk": "Tomahawk",
   "entity.mistborn.clip": "Clip",
+  "entity.mistborn.boxing": "Boxing",
 
   "tooltip.mistborn.magic_block.tooltip": "This block is very very §9mMAGICAL§r",
   "tooltip.mistborn.venture_wine.shift_down": "Very expensive wine straight from §6Straff Venture's§r personal collection. Some say that it §cburns§r really well...",

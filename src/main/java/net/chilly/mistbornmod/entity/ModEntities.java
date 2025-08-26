@@ -1,7 +1,7 @@
 package net.chilly.mistbornmod.entity;
 
 import net.chilly.mistbornmod.MistbornMod;
-import net.chilly.mistbornmod.entity.custom.ClipProjectileEntity;
+import net.chilly.mistbornmod.entity.custom.CoinProjectileEnity;
 import net.chilly.mistbornmod.entity.custom.GeckoEntity;
 import net.chilly.mistbornmod.entity.custom.KolossEntity;
 import net.chilly.mistbornmod.entity.custom.TomahawkProjectileEntity;
@@ -26,12 +26,18 @@ public class ModEntities {
     public static final Supplier<EntityType<TomahawkProjectileEntity>> TOMAHAWK =
             ENTITY_TYPES.register("tomahawk", () -> EntityType.Builder.<TomahawkProjectileEntity>of(TomahawkProjectileEntity::new, MobCategory.MISC)
                     .sized(0.5f, 1.15f).build("tomahawk"));
-    public static final Supplier<EntityType<ClipProjectileEntity>> CLIP =
-            ENTITY_TYPES.register("clip", () -> EntityType.Builder.<ClipProjectileEntity>of(ClipProjectileEntity::new, MobCategory.MISC)
+    public static final Supplier<EntityType<CoinProjectileEnity>> CLIP =
+            ENTITY_TYPES.register("clip", () -> EntityType.Builder.<CoinProjectileEnity>of(CoinProjectileEnity::new, MobCategory.MISC)
                     .sized(0.4f, 0.2f)
                     .clientTrackingRange(64)
                     .updateInterval(5)
                     .build("clip"));
+    public static final Supplier<EntityType<CoinProjectileEnity>> BOXING =
+            ENTITY_TYPES.register("boxing", () -> EntityType.Builder.<CoinProjectileEnity>of(CoinProjectileEnity::new, MobCategory.MISC)
+                    .sized(0.6f, 0.2f)
+                    .clientTrackingRange(64)
+                    .updateInterval(5)
+                    .build("boxing"));
 
 
     public static void register(IEventBus eventBus) {

@@ -82,6 +82,7 @@ public class ModItemModelProvider extends ItemModelProvider {
         basicItem(ModItems.VENTURE_WINE.get());
 
         basicItem(ModItems.CLIP.get());
+        basicItem(ModItems.BOXING.get());
 
 
 

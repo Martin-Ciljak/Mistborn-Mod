@@ -29,6 +29,7 @@ public class ModEventBusEvents {
         event.registerLayerDefinition(KolossVeryOldModel.LAYER_LOCATION, KolossVeryOldModel::createBodyLayer);
         event.registerLayerDefinition(TomahawkProjectileModel.LAYER_LOCATION, TomahawkProjectileModel::createBodyLayer);
         event.registerLayerDefinition(ClipProjectileModel.LAYER_LOCATION, ClipProjectileModel::createBodyLayer);
+        event.registerLayerDefinition(BoxingProjectileModel.LAYER_LOCATION, BoxingProjectileModel::createBodyLayer);
     }
 
     @SubscribeEvent

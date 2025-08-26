@@ -11,13 +11,13 @@ import net.minecraft.client.model.geom.PartPose;
 import net.minecraft.client.model.geom.builders.*;
 import net.minecraft.resources.ResourceLocation;
 
-public class ClipProjectileModel extends EntityModel<CoinProjectileEnity> {
+public class BoxingProjectileModel extends EntityModel<CoinProjectileEnity> {
     // This layer location should be baked with EntityRendererProvider.Context in the entity renderer and passed into this model's constructor
     public static final ModelLayerLocation LAYER_LOCATION =
-            new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "clip"), "main");
+            new ModelLayerLocation(ResourceLocation.fromNamespaceAndPath(MistbornMod.MOD_ID, "boxing"), "main");
     private final ModelPart body;
 
-    public ClipProjectileModel(ModelPart root) {
+    public BoxingProjectileModel(ModelPart root) {
         this.body = root.getChild("body");
     }
 
@@ -28,7 +28,7 @@ public class ClipProjectileModel extends EntityModel<CoinProjectileEnity> {
         PartDefinition body = partdefinition.addOrReplaceChild("body",
                 CubeListBuilder.create()
                         .texOffs(-3, -2)
-                        .addBox(-2.0F, -1.0F, -2.0F, 4.0F, 1.0F, 4.0F,
+                        .addBox(-3.0F, -1.0F, -3.0F, 6.0F, 1.0F, 6.0F,
                                 new CubeDeformation(0.0F)),
                 PartPose.offset(0.0F, 1f /*24f*/, 0.0F));
 
